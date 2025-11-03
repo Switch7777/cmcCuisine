@@ -1,0 +1,398 @@
+/* ===== NAV (identique HeaderHero, avec transitions) ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 64px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* gauche / centre / droite */
+  align-items: center;
+  padding: 0 clamp(12px, 4vw, 40px);
+  --navH: 40px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: background-color 0.28s var(--ease), border-color 0.28s var(--ease),
+    color 0.28s var(--ease);
+}
+
+/* Variante transparente / solide */
+.transparent {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
+}
+.solid {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Brand ===== */
+.brand {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+}
+.brandLink {
+  display: inline-flex;
+  align-items: center;
+}
+.brand :global(img) {
+  max-height: 44px;
+  width: auto;
+  height: auto;
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease),
+    filter 0.25s var(--ease);
+}
+@media (max-width: 480px) {
+  .brand :global(img) {
+    max-height: 36px;
+  }
+}
+
+/* ===== Liens centrés ===== */
+.links {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2.2vw, 24px);
+}
+.links a {
+  display: flex;
+  align-items: center;
+  height: var(--navH);
+  padding: 0 clamp(10px, 1.6vw, 14px);
+  text-decoration: none;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease),
+    transform 0.2s var(--ease), opacity 0.25s var(--ease);
+}
+
+/* Couleurs liens selon variante */
+.transparent .links a {
+  color: rgba(255, 255, 255, 0.92);
+}
+.transparent .links a:hover {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-1px);
+}
+
+.solid .links a {
+  color: #1c1c1c;
+}
+.solid .links a:hover {
+  color: #000;
+  border-bottom-color: rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
+}
+
+/* CTA */
+.cta {
+  height: var(--navH);
+  line-height: var(--navH);
+  padding: 0 clamp(14px, 2.2vw, 18px);
+  border-radius: 999px;
+  background: #f9f5f2;
+  color: #1b1b1b !important;
+  border: 2px solid transparent;
+  text-decoration: none !important;
+  transition: background 0.28s var(--ease), color 0.28s var(--ease),
+    border-color 0.28s var(--ease), transform 0.25s var(--ease);
+}
+.transparent .cta:hover {
+  background: transparent;
+  color: #fff !important;
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+.solid .cta:hover {
+  transform: translateY(-2px);
+  border-color: #1b1b1b22;
+}
+
+/* ===== Droite (profil / séparateurs / langues / bouton externe) ===== */
+.rightIcons {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Icône profil */
+.profileLink {
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.25s var(--ease), opacity 0.25s var(--ease);
+}
+.transparent .profileLink {
+  color: #fff;
+}
+.solid .profileLink {
+  color: #1c1c1c;
+}
+
+/* Séparateur vertical (desktop) */
+.vDivider {
+  width: 1px;
+  height: 22px;
+  background: currentColor;
+  opacity: 0.35;
+  transition: opacity 0.25s var(--ease), background-color 0.25s var(--ease);
+}
+
+/* Langues */
+.langSwitch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.langSwitch button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: transform 0.25s var(--ease), opacity 0.25s var(--ease),
+    filter 0.25s var(--ease);
+}
+.langSwitch button:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+.activeLang {
+  opacity: 1 !important;
+  transform: scale(1.12);
+}
+
+/* Bouton externe (desktop) */
+.externalBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: var(--navH);
+  padding: 0 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+  text-decoration: none;
+  border: 1px solid;
+  transition: background 0.25s var(--ease), transform 0.25s var(--ease),
+    border-color 0.25s var(--ease), color 0.25s var(--ease),
+    opacity 0.25s var(--ease);
+}
+.transparent .externalBtn {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.22);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+.transparent .externalBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.solid .externalBtn {
+  color: #1c1c1c;
+  background: #f5f5f7;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+.solid .externalBtn:hover {
+  background: #efeff2;
+  transform: translateY(-2px);
+}
+
+/* ===== Burger ===== */
+.burger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid;
+  background: transparent;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.25s var(--ease), background-color 0.25s var(--ease);
+}
+.transparent .burger {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.solid .burger {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+.burger span {
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  height: 2px;
+  border-radius: 2px;
+  transition: transform 0.3s var(--ease), opacity 0.2s var(--ease),
+    background-color 0.25s var(--ease);
+}
+.transparent .burger span {
+  background: #fff;
+}
+.solid .burger span {
+  background: #1c1c1c;
+}
+.burger span:nth-child(1) {
+  top: 12px;
+}
+.burger span:nth-child(2) {
+  top: 19px;
+}
+.burger span:nth-child(3) {
+  top: 26px;
+}
+.burgerOpen span:nth-child(1) {
+  top: 19px;
+  transform: rotate(45deg);
+}
+.burgerOpen span:nth-child(2) {
+  opacity: 0;
+}
+.burgerOpen span:nth-child(3) {
+  top: 19px;
+  transform: rotate(-45deg);
+}
+
+/* ===== MENU MOBILE ===== */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+}
+.mobileMenuOpen {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* overlay fond */
+.mobileMenu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.mobileInner {
+  position: absolute;
+  top: 70px;
+  left: clamp(12px, 4vw, 24px);
+  right: clamp(12px, 4vw, 24px);
+  background: rgba(20, 20, 20, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+  transform: translateY(-10px);
+  animation: slideIn 0.55s var(--ease) both;
+}
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.mobileInner a {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  transition: background 0.25s var(--ease), border-color 0.25s var(--ease),
+    color 0.25s var(--ease);
+}
+.mobileInner a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.mobileCta {
+  text-align: center;
+  background: #f9f5f2 !important;
+  color: #1b1b1b !important;
+  border-radius: 999px;
+  margin-top: 6px;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease),
+    border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.mobileCta:hover {
+  background: transparent !important;
+  color: #fff !important;
+  border: 1px solid #fff;
+  transform: translateY(-2px);
+}
+
+.mobileActions {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+/* CMC Habitat — centré */
+.mobileExternalBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #1b1b1b;
+  background: #f9f5f2;
+  border: 2px solid transparent;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease),
+    border-color 0.25s var(--ease), transform 0.25s var(--ease);
+  justify-self: center;
+  width: fit-content;
+}
+.mobileExternalBtn:hover {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .links,
+  .rightIcons {
+    display: none;
+  } /* tout dans le burger */
+  .burger {
+    display: inline-block;
+    grid-column: 3;
+    justify-self: end;
+  }
+  .vDivider {
+    display: none;
+  } /* pas de séparateurs visibles en mobile */
+}
+
+/* ===== Accessibilité : réduire les animations ===== */
+@media (prefers-reduced-motion: reduce) {
+  .nav,
+  .brand :global(img),
+  .links a,
+  .cta,
+  .profileLink,
+  .vDivider,
+  .langSwitch button,
+  .externalBtn,
+  .burger,
+  .burger span,
+  .mobileMenu,
+  .mobileInner,
+  .mobileInner a,
+  .mobileCta,
+  .mobileExternalBtn {
+    transition: none !important;
+    animation: none !important;
+  }
+}

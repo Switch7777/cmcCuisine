@@ -1,0 +1,203 @@
+/* Section */
+.section {
+  background: #f9f5f2;
+  padding: clamp(28px, 6vw, 72px) clamp(16px, 6vw, 80px);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  scroll-margin-top: 72px; /* si ancré via #contact */
+}
+
+/* En-tête */
+.headerRow {
+  text-align: center;
+  margin-bottom: clamp(16px, 4vw, 28px);
+}
+.kicker {
+  font-size: 2rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #a5b3ac;
+  margin-bottom: 8px;
+}
+.title {
+  font-family: "Jost", "Times New Roman", serif;
+  font-weight: 500;
+  color: #1e2c35;
+  font-size: clamp(26px, 5vw, 42px);
+  line-height: 1.12;
+  margin: 0 0 8px;
+}
+.lead {
+  font-family: "Jost", sans-serif;
+  color: rgba(0, 0, 0, 0.72);
+  font-size: clamp(0.95rem, 1.6vw, 1.12rem);
+  max-width: 70ch;
+  margin: 0 auto;
+}
+
+/* Grille principale */
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  gap: clamp(16px, 3vw, 32px);
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cartes */
+.infoCard,
+.form,
+.mapCard {
+  background: #f9f5f2;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  padding: clamp(16px, 3vw, 24px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+}
+
+.h2 {
+  margin: 0 0 10px;
+  font-family: "Jost", "Times New Roman", serif;
+  font-weight: 500;
+  color: #1e2c35;
+  font-size: clamp(18px, 3vw, 22px);
+}
+
+/* Infos */
+.addr {
+  font-style: normal;
+  color: rgba(0, 0, 0, 0.75);
+  margin-bottom: 8px;
+}
+.addr a {
+  color: #1e2c35;
+  text-decoration: none;
+}
+.addr a:hover {
+  text-decoration: none;
+}
+
+.hours h3 {
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  margin: 10px 0 6px;
+}
+.hours ul {
+  margin: 0;
+  padding-left: 16px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.contactLines a {
+  text-decoration: none;
+  color: black;
+}
+/* Formulaire */
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.field label {
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+.field input,
+.field textarea {
+  font-family: "Jost", sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  padding: 0.8rem 0.9rem;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.field input:focus,
+.field textarea:focus {
+  border-color: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+
+/* Bouton (même style que le site) */
+.button {
+  display: inline-block;
+  background: #1b1b1b;
+  color: #f9f5f2;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  font-family: "Jost", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  background: transparent;
+  color: #1b1b1b;
+  border-color: #1b1b1b;
+  transform: translateY(-1px);
+}
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Notes d’état */
+.noteOk {
+  margin-top: 10px;
+  color: #1e7a4a;
+  font-family: "Jost", sans-serif;
+}
+.noteErr {
+  margin-top: 10px;
+  color: #a33a2b;
+  font-family: "Jost", sans-serif;
+}
+
+/* Map */
+.mapWrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px;
+  filter: grayscale(100%) brightness(90%);
+  transition: filter 0.4s ease;
+}
+.mapWrap:hover {
+  filter: grayscale(20%) brightness(100%) saturate(1.05);
+}
+.mapWrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.mapNote {
+  margin-top: 8px;
+  font-family: "Jost", sans-serif;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .row2 {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,144 @@
+.section {
+  display: grid;
+  grid-template-columns: 1fr minmax(40px, 60px) 1fr;
+  gap: clamp(12px, 2vw, 24px);
+  padding: clamp(16px, 4vw, 48px);
+  background-color: #f9f5f2;
+}
+
+/* Colonnes gauche / droite */
+.leftCol,
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spacer {
+  height: clamp(40px, 6vh, 120px);
+}
+
+/* Texte vertical central */
+.gutter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.verticalLabel {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 0.25em;
+  font-size: clamp(16px, 2vw, 28px);
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.75);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+/* Bloc texte */
+.textBlock {
+  max-width: 52ch;
+  margin-bottom: clamp(12px, 2vw, 20px);
+}
+.title {
+  font-size: clamp(18px, 2vw, 30px);
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+.textBlock p {
+  color: rgba(0, 0, 0, 0.72);
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+
+/* Cadres images (beaucoup plus petits et centrés) */
+.imgFrameWide,
+.imgFrameTall {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f4f4f4;
+  width: 40%; /* très petit */
+  margin: 0 auto;
+}
+
+.imgFrameWide {
+  aspect-ratio: 4 / 5;
+  margin-top: clamp(6px, 1vw, 10px);
+}
+
+.imgFrameTall {
+  aspect-ratio: 4 / 5;
+  margin-top: clamp(6px, 1vw, 10px);
+}
+
+/* Image : grisée par défaut */
+.img {
+  filter: grayscale(100%) brightness(78%);
+  opacity: 0.9;
+  object-fit: cover;
+  transform: scale(0.75) translateY(-5%);
+  transform-origin: center center;
+  transition: filter 0.35s ease, opacity 0.35s ease; /* transition douce */
+}
+
+/* 👉 Au survol: repasse en couleurs */
+.imgFrameWide:hover .img,
+.imgFrameTall:hover .img {
+  filter: grayscale(0%) brightness(100%);
+  opacity: 1;
+}
+
+/* Signatures et légendes */
+.signature {
+  margin-top: 6px;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.9rem;
+  text-align: center;
+}
+.legend {
+  margin-top: 6px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.9rem;
+  text-align: center;
+}
+.signatureInline {
+  font-style: italic;
+}
+
+/* Responsive mobile */
+@media (max-width: 900px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+
+  .gutter {
+    height: 32px;
+    order: -1;
+  }
+
+  .verticalLabel {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+  }
+
+  .spacer {
+    height: 24px;
+  }
+
+  .textBlock {
+    max-width: 100%;
+  }
+
+  .imgFrameWide,
+  .imgFrameTall {
+    width: 55%; /* un peu plus grand sur mobile */
+  }
+
+  .img {
+    transform: scale(0.8) translateY(-3%);
+  }
+}

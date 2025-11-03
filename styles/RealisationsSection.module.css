@@ -1,0 +1,180 @@
+.section {
+  border-top: none;
+  margin-top: 2vh;
+  margin-bottom: 0; /* ou un léger spacing positif si besoin */
+}
+
+/* ===== En-tête ===== */
+.headerRow {
+  text-align: center;
+  margin-bottom: clamp(16px, 4vw, 28px);
+}
+.kicker {
+  font-size: 2rem;
+  letter-spacing: 0.18em;
+  color: #a5b3ac;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.title {
+  font-family: "Jost", "Times New Roman", serif;
+  font-weight: 500;
+  color: #1e2c35;
+  font-size: clamp(28px, 4.8vw, 46px);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  margin: 0 0 8px;
+}
+.lead {
+  font-family: "Jost", sans-serif;
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  color: rgba(0, 0, 0, 0.7);
+  max-width: 70ch;
+  margin: 0 auto;
+}
+
+/* ===== Carrousel ===== */
+.carousel {
+  position: relative;
+  max-width: 1100px;
+  margin: clamp(12px, 3vw, 20px) auto 0;
+  overflow: hidden; /* pas de scroll horizontal */
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  background: #f4f4f4;
+  touch-action: pan-y; /* évite conflit swipe/scroll */
+}
+
+/* Piste des slides (une ligne, sans gap) */
+.track {
+  display: flex;
+  width: 100%;
+  transition: transform 500ms ease;
+  will-change: transform;
+  gap: 0; /* ✅ aucun espacement entre slides */
+}
+
+/* Chaque slide = 100% de la largeur du carrousel */
+.slide {
+  position: relative;
+  min-width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #e9ecef;
+  margin: 0; /* ✅ supprime le margin par défaut des <figure> */
+  padding: 0;
+}
+
+/* Image : N&B → couleur au hover (cohérence site) */
+.slideImg {
+  filter: grayscale(100%) brightness(88%);
+  transition: transform 1s ease, filter 0.6s ease;
+  transform: translateZ(0) scale(1.03); /* ✅ boost rendu + évite tearing */
+  backface-visibility: hidden;
+}
+.slide:hover .slideImg {
+  transform: translateZ(0) scale(1.06);
+  filter: grayscale(20%) brightness(100%) saturate(1.06);
+}
+
+/* Légende */
+.caption {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-family: "Jost", sans-serif;
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+/* Flèches */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 26px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
+  backdrop-filter: saturate(140%) blur(6px);
+}
+.arrow:hover {
+  transform: translateY(-50%) scale(1.05);
+  background: rgba(0, 0, 0, 0.36);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+.left {
+  left: 10px;
+}
+.right {
+  right: 10px;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  transform: scale(1);
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  opacity: 0.7;
+}
+.dotActive {
+  background: #ffffff;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 980px) {
+  .title {
+    font-size: clamp(24px, 6.5vw, 38px);
+  }
+  .carousel {
+    margin-top: 12px;
+  }
+}
+@media (max-width: 640px) {
+  .caption {
+    font-size: 0.78rem;
+    left: 10px;
+    bottom: 8px;
+  }
+  .arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+  }
+}
+
+/* ===== Resets de sécurité (si pas de reset global) ===== */
+.carousel figure {
+  margin: 0;
+  padding: 0;
+}

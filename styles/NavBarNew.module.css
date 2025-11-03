@@ -1,0 +1,609 @@
+/* ===== NAV ===== */
+.nav {
+  --navH: 40px;
+  --logoW: 140px; /* avant : 166px */
+  --logoH: 50px; /* avant : 60px  */
+  --logoMaxW: 110px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 clamp(12px, 4vw, 40px);
+
+  transition: background 0.5s ease, backdrop-filter 0.5s ease, color 0.4s ease;
+  will-change: background, backdrop-filter, color;
+}
+
+/* ===== État transparent ===== */
+.transparent {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: none;
+  color: #fff;
+}
+
+/* ===== État solid (scroll) ===== */
+.solid {
+  background: linear-gradient(
+    to bottom,
+    rgba(138, 138, 138, 0.534) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+/* forcer le noir quand la nav est solid */
+.solid .navItem,
+.solid .servicesLink,
+.solid .profileLink,
+.solid .externalBtn,
+.solid .externalBtn span,
+.solid .externalBtn svg,
+.solid .langBtn,
+.solid .langBtn svg,
+.solid a {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+
+  text-shadow: none;
+}
+
+/* séparateur */
+.solid .vDivider {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Séparateur */
+.solid .vDivider {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Bouton externe */
+.solid .externalBtn {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.solid .externalBtn:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* ===== LOGO ===== */
+.brand {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+}
+
+.brandLink {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: var(--logoW);
+  height: var(--logoH);
+}
+
+.logoWrap {
+  position: absolute;
+  inset: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.logoWrap :global(img) {
+  display: block;
+  width: 100%;
+  max-width: var(--logoMaxW);
+  height: auto;
+  transition: transform 0.25s ease;
+}
+
+@media (max-width: 480px) {
+  .brandLink {
+    width: 140px;
+    height: 50px;
+  }
+  .logoWrap :global(img) {
+    max-width: 110px;
+  }
+}
+
+/* ===== LIENS DESKTOP ===== */
+.links {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2.2vw, 24px);
+}
+
+.navItem,
+.servicesLink {
+  appearance: none;
+  border: 0;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: var(--navH);
+  padding: 0 clamp(10px, 1.6vw, 14px);
+  white-space: nowrap;
+  cursor: pointer;
+  font: inherit;
+  font-size: 16px;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.18s ease, transform 0.15s ease;
+}
+
+.navItem:hover,
+.servicesLink:hover,
+.navItem:focus-visible,
+.servicesLink:focus-visible {
+  border-bottom-color: currentColor;
+  transform: translateY(-1px);
+}
+
+/* texte blanc en version transparente */
+.transparent .navItem,
+.transparent .servicesLink,
+.transparent .profileLink,
+.transparent .externalBtn {
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.caret {
+  margin-left: 6px;
+  font-size: 0.85em;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.submenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  min-width: 210px;
+  background: rgba(18, 18, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 8px;
+  display: grid;
+  gap: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  z-index: 200;
+}
+
+.dropdown:hover .submenu,
+.dropdown:focus-within .submenu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.submenuItem {
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.submenuItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ===== CTA ===== */
+.cta {
+  height: var(--navH);
+  line-height: var(--navH);
+  padding: 0 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18); /* même effet que CMC Habitat */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none !important;
+  backdrop-filter: blur(6px) saturate(150%);
+  -webkit-backdrop-filter: blur(6px) saturate(150%);
+  transition: all 0.25s ease;
+  white-space: nowrap; /* reste sur une seule ligne */
+  max-width: 230px; /* tu peux ajuster */
+  text-align: center;
+}
+
+/* hover doux et lumineux */
+.cta:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-2px);
+}
+
+/* en version solid (scroll) → bouton clair sur fond blanc */
+.solid .cta {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #ffffff !important;
+}
+
+.solid .cta:hover {
+  background: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* ===== DROITE ===== */
+.rightIcons {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profileLink {
+  display: inline-flex;
+  align-items: center;
+}
+
+.vDivider {
+  width: 1px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ===== LANG SWITCH ===== */
+.langSwitch {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.langBtn {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  box-shadow: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.langBtn:focus {
+  outline: none;
+}
+
+.langBtn::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.langBtn > svg,
+.langBtn > img,
+.langBtn > span {
+  display: block;
+}
+
+/* ===== EXTERNAL BTN ===== */
+.externalBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  height: var(--navH);
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.externalBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ===== BURGER ===== */
+.burger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+
+.burger span {
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.burger span:nth-child(1) {
+  top: 12px;
+}
+.burger span:nth-child(2) {
+  top: 19px;
+}
+.burger span:nth-child(3) {
+  top: 26px;
+}
+
+.burgerOpen span:nth-child(1) {
+  top: 19px;
+  transform: rotate(45deg);
+}
+.burgerOpen span:nth-child(2) {
+  opacity: 0;
+}
+.burgerOpen span:nth-child(3) {
+  top: 19px;
+  transform: rotate(-45deg);
+}
+
+/* ===== MOBILE MENU ===== */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.mobileMenuOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobileMenu::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.mobileInner {
+  position: absolute;
+  top: 70px;
+  left: clamp(12px, 4vw, 24px);
+  right: clamp(12px, 4vw, 24px);
+  background: rgba(20, 20, 20, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+/* tous les liens du menu mobile SAUF le lien profil */
+.mobileInner a:not(.profileLink) {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+/* le lien profil : petit bouton centré */
+.mobileInner .profileLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileInner a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.mobileServicesBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mobileServicesBtn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mobileServicesBtnOpen {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.mobileSubmenu {
+  display: grid;
+  gap: 8px;
+  padding: 6px 4px 0 8px;
+  margin-left: 6px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.22s ease;
+}
+
+.mobileSubmenu a {
+  padding: 10px 12px;
+}
+
+.mobileSubmenuOpen {
+  max-height: 300px;
+}
+
+.mobileCta {
+  text-align: center;
+  background: #f9f5f2 !important;
+  color: #1b1b1b !important;
+  border-radius: 999px;
+  margin-top: 6px;
+}
+.mobileInner .profileLink,
+.mobileInner .mobileProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.mobileCta:hover {
+  background: transparent !important;
+  color: #fff !important;
+  border: 1px solid #fff;
+}
+
+.mobileExternalBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #1b1b1b;
+  background: #f9f5f2;
+  border: 2px solid transparent;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  justify-self: center;
+  width: fit-content;
+}
+
+.mobileExternalBtn:hover {
+  background: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* ===== BREAKPOINT ===== */
+@media (max-width: 900px) {
+  .brand,
+  .links,
+  .rightIcons,
+  .vDivider {
+    display: none !important;
+  }
+  .burger {
+    display: inline-block !important;
+    grid-column: 3;
+    justify-self: end;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  .nav,
+  .submenu,
+  .mobileMenu,
+  .mobileInner,
+  .mobileSubmenu,
+  .navItem,
+  .servicesLink,
+  .cta,
+  .externalBtn,
+  .logoWrap :global(img) {
+    transition: none !important;
+  }
+}
+
+.mobileLang {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.mobileLang button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  line-height: 0;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 0.15s ease;
+}
+
+.mobileLang button:hover {
+  transform: scale(1.08);
+}
+
+/* ✅ contour doux et propre uniquement sur le drapeau actif */
+.mobileLangActive {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+}
+
+.mobileLang img,
+.mobileLang svg {
+  display: block;
+  border: none !important; /* enlève tout cadre éventuel */
+  box-shadow: none !important;
+}
+@media (max-width: 1180px) {
+  .links {
+    gap: 14px;
+  }
+  .navItem,
+  .servicesLink {
+    padding: 0 10px;
+  }
+  .cta {
+    padding: 0 14px; /* un peu moins large */
+    font-size: 0.9rem;
+  }
+}
+
+/* 3) juste avant de passer en mobile (avant 900px),
+   on évite que ça s’écrase */
+@media (max-width: 1024px) {
+  .links {
+    gap: 10px;
+  }
+  .brandLink {
+    width: 120px;
+  }
+}

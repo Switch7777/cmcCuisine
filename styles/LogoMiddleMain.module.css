@@ -1,0 +1,83 @@
+.section {
+  background: #f9f5f2;
+  padding: clamp(32px, 7vh, 72px) clamp(16px, 6vw, 80px);
+  text-align: center;
+}
+
+.title {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.1rem, 3vw, 2rem);
+  line-height: 1.2;
+  color: #1e2c35;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: clamp(24px, 5vh, 48px);
+}
+
+/* ===== Grille alignée : 4 / 2 / 1 colonnes ===== */
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  justify-items: center;
+  align-items: start;
+  gap: clamp(24px, 4vw, 48px);
+}
+
+/* Chaque carte = grille 2 lignes : icône (fixe) + texte (auto) */
+.card {
+  display: grid;
+  grid-template-rows: 60px auto;
+  justify-items: center;
+  align-items: start;
+  text-align: center;
+  gap: 0.8rem;
+  padding: 1.5rem;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+/* Wrapper icône normalisé */
+.icon {
+  height: 60px; /* même hauteur pour toutes les cartes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0; /* supprime la baseline typographique */
+}
+
+/* Normalisation icône (SVG/IMG) */
+.icon svg,
+.icon img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  color: #222;
+  transition: transform 0.1s ease, color 0.3s ease;
+}
+
+/* Effet hover */
+.card:hover .icon svg {
+  transform: scale(1.1);
+  color: #c09a60;
+}
+
+/* Texte */
+.card p {
+  margin: 0;
+  font-family: "Jost", sans-serif;
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  line-height: 1.45;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
