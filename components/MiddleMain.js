@@ -1,4 +1,4 @@
-import styles from "../styles/MiddleMain.module.css";
+import styles from "../styles/Middlemain.module.css";
 import LogoMiddleMainUn from "./logo/LogoMiddleMainUn";
 import LogoMiddleMainDeux from "./logo/LogoMiddleMainDeux";
 import LogoMiddleMainTrois from "./logo/LogoMiddleMainTrois";
