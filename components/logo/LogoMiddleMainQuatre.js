@@ -1,4 +1,4 @@
-import styles from "../../styles/MiddleMain.module.css";
+import styles from "../../styles/Middlemain.module.css";
 import { Wallet } from "lucide-react";
 import { useLang } from "../../context/LangContext";
 
