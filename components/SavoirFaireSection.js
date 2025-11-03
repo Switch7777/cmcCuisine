@@ -79,11 +79,7 @@ export default function SavoirFaireSection() {
         <div className={styles.imgFrameWide}>
           <Image
             src="/laura.jpg"
-            alt={
-              lang === "fr"
-                ? "Laura Poncelet, Assistante de direction"
-                : "Laura Poncelet, Assistante de direction"
-            }
+            alt={lang === "fr" ? "Laura Poncelet, " : "Laura Poncelet, "}
             layout="fill"
             objectFit="cover"
             objectPosition="center top"
