@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/ShowroomSection.module.css";
-import { useLang } from "../context/LangContext"; // ✅ import du contexte
+import { useLang } from "../context/LangContext";
 
 export default function ShowroomSection() {
   const { lang } = useLang();
@@ -30,10 +30,10 @@ export default function ShowroomSection() {
         </p>
       </div>
 
-      {/* Gouttière / séparateur vertical */}
+      {/* Séparateur */}
       <div className={styles.gutter} aria-hidden="true" />
 
-      {/* Colonne droite : sous-titre + images */}
+      {/* Colonne droite */}
       <div className={styles.right}>
         <div className={styles.rightKicker}>
           {lang === "fr"
@@ -41,7 +41,6 @@ export default function ShowroomSection() {
             : "YOUR SHOWROOM IN VILLENEUVE-LOUBET: DESIGN AND INSPIRATION"}
         </div>
 
-        {/* Grande image principale */}
         <figure className={styles.hero}>
           <Image
             src="/bureau.png"
@@ -57,7 +56,6 @@ export default function ShowroomSection() {
           />
         </figure>
 
-        {/* Vignette qui chevauche */}
         <figure className={styles.thumb}>
           <Image
             src="/bureau2.png"
