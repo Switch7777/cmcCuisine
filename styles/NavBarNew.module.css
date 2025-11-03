@@ -442,6 +442,9 @@
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid transparent;
   cursor: pointer;
+  font-size: 1rem; /* même taille que les <a> */
+  font-family: inherit; /* même police que le reste */
+  line-height: 1.4;
 }
 
 .mobileServicesBtn:hover {
@@ -464,6 +467,7 @@
 
 .mobileSubmenu a {
   padding: 10px 12px;
+  font-size: 0.95rem; /* ou 1rem si tu veux identique */
 }
 
 .mobileSubmenuOpen {
