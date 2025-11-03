@@ -44,7 +44,7 @@ export default function ShowroomSection() {
         {/* Grande image principale */}
         <figure className={styles.hero}>
           <Image
-            src="/BUREAU.png"
+            src="/bureau.png"
             alt={
               lang === "fr"
                 ? "Showroom CMC Cuisine à Villeneuve-Loubet"
