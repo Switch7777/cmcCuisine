@@ -58,11 +58,7 @@ export default function SavoirFaireSection() {
         <div className={styles.imgFrameWide}>
           <Image
             src="/collaborateurs/aurelie.jpg"
-            alt={
-              lang === "fr"
-                ? "Aurelie JEN SAIS RIEN, jEN SAIS RIEN"
-                : "Aurelie JEN SAIS RIEN, jEN SAIS RIEN"
-            }
+            alt={lang === "fr" ? "Aurelie " : "Aurelie "}
             layout="fill"
             objectFit="cover"
             objectPosition="center top"
@@ -70,9 +66,7 @@ export default function SavoirFaireSection() {
           />
         </div>
         <p className={styles.signature}>
-          {lang === "fr"
-            ? "— Aurelie JEN SAIS RIEN, jEN SAIS RIEN"
-            : "— Aurelie JEN SAIS RIEN, jEN SAIS RIEN"}
+          {lang === "fr" ? "— Aurelie " : "— Aurelie "}
         </p>
 
         {/* Photo 4 Laura */}
@@ -87,9 +81,7 @@ export default function SavoirFaireSection() {
           />
         </div>
         <p className={styles.signature}>
-          {lang === "fr"
-            ? "— Laura Poncelet, Assistante de direction"
-            : "— Laura Poncelet, Assistante de direction"}
+          {lang === "fr" ? "— Laura Poncelet, " : "— Laura Poncelet, "}
         </p>
       </div>
 
@@ -130,11 +122,7 @@ export default function SavoirFaireSection() {
         <div className={styles.imgFrameTall}>
           <Image
             src="/collaborateurs/thierry.jpg"
-            alt={
-              lang === "fr"
-                ? "Thierry JEN SAIS RIEN , Directeur commercial"
-                : "Thierry JEN SAIS RIEN , Directeur commercial"
-            }
+            alt={lang === "fr" ? "Thierry " : "Thierry "}
             layout="fill"
             objectFit="cover"
             objectPosition="center top"
@@ -143,9 +131,7 @@ export default function SavoirFaireSection() {
         </div>
         <p className={styles.legend}>
           <span className={styles.signatureInline}>
-            {lang === "fr"
-              ? "— Thierry JEN SAIS RIEN , Directeur commercial"
-              : "— Thierry JEN SAIS RIEN , Directeur commercial"}
+            {lang === "fr" ? "— Thierry " : "— Thierry "}
           </span>
         </p>
 
@@ -153,11 +139,7 @@ export default function SavoirFaireSection() {
         <div className={styles.imgFrameTall}>
           <Image
             src="/collaborateurs/caroline.jpg"
-            alt={
-              lang === "fr"
-                ? "Caroline JEN SAIS RIEN, conseillère clientèle"
-                : "Caroline JEN SAIS RIEN, conseillère clientèle"
-            }
+            alt={lang === "fr" ? "Caroline " : "Caroline "}
             layout="fill"
             objectFit="cover"
             objectPosition="center top"
@@ -166,9 +148,7 @@ export default function SavoirFaireSection() {
         </div>
         <p className={styles.legend}>
           <span className={styles.signatureInline}>
-            {lang === "fr"
-              ? "— Caroline JEN SAIS RIEN, conseillère clientèle"
-              : "— Caroline JEN SAIS RIEN, conseillère clientèle"}
+            {lang === "fr" ? "— Caroline " : "— Caroline "}
           </span>
         </p>
 
@@ -178,8 +158,8 @@ export default function SavoirFaireSection() {
             src="/collaborateurs/fred.jpg"
             alt={
               lang === "fr"
-                ? "Fred JEN SAIS RIEN, responsable pose"
-                : "Fred JEN SAIS RIEN , installation manager"
+                ? "Fred , responsable pose"
+                : "Fred , installation manager"
             }
             layout="fill"
             objectFit="cover"
@@ -190,8 +170,8 @@ export default function SavoirFaireSection() {
         <p className={styles.legend}>
           <span className={styles.signatureInline}>
             {lang === "fr"
-              ? "— Fred JEN SAIS RIEN, responsable pose"
-              : "— Fred JEN SAIS RIEN , installation manager"}
+              ? "— Fred , responsable pose"
+              : "— Fred, installation manager"}
           </span>
         </p>
       </div>
