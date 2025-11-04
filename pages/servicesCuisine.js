@@ -1,20 +1,23 @@
 import Head from "next/head";
-import RealisationsSection from "../components/RealisationsSection.js";
 import Navbar from "../components/NavBarNew.js";
+import ServicesCuisineCat from "../components/ServicesCuisineCat.js";
 import FooterSection from "../components/FooterSection.js";
 
-export default function RealisationsPage() {
+export default function ServicesCuisine() {
   return (
     <>
-      <Navbar />
       <Head>
-        <title>Nos réalisations — CMC Cuisine</title>
+        <title>Nos collections de cuisines — CMC Cuisine</title>
         <meta
           name="description"
-          content="Découvrez une sélection de nos réalisations : cuisines sur-mesure, détails de finitions et matériaux premium."
+          content="Découvrez nos collections de cuisines sur-mesure : Verso, Delta, Kyoto, et bien d'autres modèles design et fonctionnels."
         />
       </Head>
 
+      <Navbar />
+      <main>
+        <ServicesCuisineCat />
+      </main>
       <FooterSection />
     </>
   );

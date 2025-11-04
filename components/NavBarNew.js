@@ -51,6 +51,7 @@ export default function NavBar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [solid, setSolid] = useState(false);
 
+  // scroll → nav solide
   useEffect(() => {
     let ticking = false;
     const onScroll = () => {
@@ -67,11 +68,11 @@ export default function NavBar() {
     };
 
     onScroll();
-
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [solid]);
 
+  // resize → on ferme le mobile
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth > 900) {
@@ -120,11 +121,11 @@ export default function NavBar() {
             >
               {L.services}
               <span className={styles.caret} aria-hidden="true">
-                ▾
+                ▼
               </span>
             </button>
             <div className={styles.submenu} role="menu">
-              <Link href="/services/cuisines" legacyBehavior>
+              <Link href="/servicesCuisine" legacyBehavior>
                 <a role="menuitem" className={styles.submenuItem}>
                   {L.servicesKitchen}
                 </a>
@@ -244,26 +245,26 @@ export default function NavBar() {
           >
             {L.services}
             <span className={styles.caret} aria-hidden="true">
-              {mobileServicesOpen ? "▴" : "▾"}
+              {mobileServicesOpen ? "^" : "v"}
             </span>
           </button>
 
-          <div
-            id="mobile-services-submenu"
-            className={`${styles.mobileSubmenu} ${
-              mobileServicesOpen ? styles.mobileSubmenuOpen : ""
-            }`}
-          >
-            <Link href="/services/cuisines" legacyBehavior>
-              <a onClick={() => setOpen(false)}>{L.servicesKitchen}</a>
-            </Link>
-            <Link href="/services/salle-de-bain" legacyBehavior>
-              <a onClick={() => setOpen(false)}>{L.servicesBathroom}</a>
-            </Link>
-            <Link href="/services/placard" legacyBehavior>
-              <a onClick={() => setOpen(false)}>{L.servicesCloset}</a>
-            </Link>
-          </div>
+          {mobileServicesOpen && (
+            <div
+              id="mobile-services-submenu"
+              className={`${styles.mobileSubmenu} ${styles.mobileSubmenuOpen}`}
+            >
+              <Link href="/servicesCuisine" legacyBehavior>
+                <a onClick={() => setOpen(false)}>{L.servicesKitchen}</a>
+              </Link>
+              <Link href="/services/salle-de-bain" legacyBehavior>
+                <a onClick={() => setOpen(false)}>{L.servicesBathroom}</a>
+              </Link>
+              <Link href="/services/placard" legacyBehavior>
+                <a onClick={() => setOpen(false)}>{L.servicesCloset}</a>
+              </Link>
+            </div>
+          )}
 
           <Link href="/realisation" legacyBehavior>
             <a onClick={() => setOpen(false)}>{L.works}</a>

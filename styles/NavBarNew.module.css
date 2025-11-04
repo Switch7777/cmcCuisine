@@ -458,20 +458,22 @@
 .mobileSubmenu {
   display: grid;
   gap: 8px;
-  padding: 6px 4px 0 8px;
-  margin-left: 6px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.22s ease;
+  padding: 0;
+  margin-left: 0;
+}
+
+.mobileSubmenuOpen {
+  max-height: 300px;
+  padding: 6px 4px 0 8px; /* ✅ seulement ouvert */
+  margin-left: 6px; /* ✅ seulement ouvert */
 }
 
 .mobileSubmenu a {
   padding: 10px 12px;
   font-size: 0.95rem; /* ou 1rem si tu veux identique */
-}
-
-.mobileSubmenuOpen {
-  max-height: 300px;
 }
 
 .mobileCta {
