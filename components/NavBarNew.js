@@ -130,12 +130,12 @@ export default function NavBar() {
                   {L.servicesKitchen}
                 </a>
               </Link>
-              <Link href="/services/salle-de-bain" legacyBehavior>
+              <Link href="/servicesSdb" legacyBehavior>
                 <a role="menuitem" className={styles.submenuItem}>
                   {L.servicesBathroom}
                 </a>
               </Link>
-              <Link href="/services/placard" legacyBehavior>
+              <Link href="/servicesPlacard" legacyBehavior>
                 <a role="menuitem" className={styles.submenuItem}>
                   {L.servicesCloset}
                 </a>
@@ -257,10 +257,10 @@ export default function NavBar() {
               <Link href="/servicesCuisine" legacyBehavior>
                 <a onClick={() => setOpen(false)}>{L.servicesKitchen}</a>
               </Link>
-              <Link href="/services/salle-de-bain" legacyBehavior>
+              <Link href="/servicesSdb" legacyBehavior>
                 <a onClick={() => setOpen(false)}>{L.servicesBathroom}</a>
               </Link>
-              <Link href="/services/placard" legacyBehavior>
+              <Link href="/servicesPlacard" legacyBehavior>
                 <a onClick={() => setOpen(false)}>{L.servicesCloset}</a>
               </Link>
             </div>

@@ -1,0 +1,58 @@
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 260px; /* hauteur type bandeau */
+  height: 28vh;
+  max-height: 320px;
+  background: url("/banner/cuisine.jpg") center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38); /* voile sombre comme ton screen */
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  padding: 0 1.5rem;
+  max-width: 1100px;
+}
+
+.title {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.8rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 54rem;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .banner {
+    min-height: 220px;
+    height: auto;
+    padding: 3.5rem 0;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
+}

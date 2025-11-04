@@ -1,7 +1,8 @@
 .section {
   border-top: none;
-  margin-top: 2vh;
-  margin-bottom: 0; /* ou un léger spacing positif si besoin */
+  padding-top: 4vh;
+  padding-bottom: 7vh;
+  background: white;
 }
 
 /* ===== En-tête ===== */

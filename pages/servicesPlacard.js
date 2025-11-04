@@ -1,20 +1,23 @@
 import Head from "next/head";
-import RealisationsSection from "../components/RealisationsSection.js";
 import Navbar from "../components/NavBarNew.js";
+import ServicesPlacardCat from "../components/ServicesPlacard.js";
 import FooterSection from "../components/FooterSection.js";
 
-export default function RealisationsPage() {
+export default function ServicesPlacard() {
   return (
     <>
-      <Navbar />
       <Head>
-        <title>Nos réalisations — CMC Cuisine</title>
+        <title>Nos collections de placard — CMC Cuisine</title>
         <meta
           name="description"
-          content="Découvrez une sélection de nos réalisations : cuisines sur-mesure, détails de finitions et matériaux premium."
+          content="Découvrez nos collections de placard sur-mesure : Verso, Delta, Kyoto, et bien d'autres modèles design et fonctionnels."
         />
       </Head>
 
+      <Navbar />
+      <main>
+        <ServicesPlacardCat />
+      </main>
       <FooterSection />
     </>
   );

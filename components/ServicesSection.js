@@ -7,19 +7,19 @@ const CARDS = {
   fr: [
     {
       label: "Cuisines",
-      href: "/services/cuisines",
+      href: "/servicesCuisines",
       img: "/services/cuisines.jpg",
       alt: "Cuisine sur-mesure",
     },
     {
       label: "Salle de bains",
-      href: "/services/salle-de-bain",
+      href: "/servicesSdb",
       img: "/services/sdb.jpg",
       alt: "Salle de bains design",
     },
     {
       label: "PlacarD",
-      href: "/services/placard",
+      href: "/servicesPlacard",
       img: "/services/placard.jpg",
       alt: "Placard et dressing",
     },
@@ -27,19 +27,19 @@ const CARDS = {
   en: [
     {
       label: "Kitchens",
-      href: "/services/cuisines",
+      href: "/servicesCuisines",
       img: "/services/cuisines.jpg",
       alt: "Custom kitchen",
     },
     {
       label: "Bathrooms",
-      href: "/services/salle-de-bain",
+      href: "/servicesSdb",
       img: "/services/sdb.jpg",
       alt: "Bathroom design",
     },
     {
       label: "Closets",
-      href: "/services/placard",
+      href: "/servicesPlacard",
       img: "/services/placard.jpg",
       alt: "Closet and wardrobe",
     },

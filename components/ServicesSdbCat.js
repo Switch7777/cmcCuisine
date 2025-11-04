@@ -1,55 +1,55 @@
 import Image from "next/image";
-import styles from "../styles/ServicesCuisineCat.module.css";
+import styles from "../styles/ServicesSdbCat.module.css";
 
 const COLLECTIONS = [
   {
     slug: "verso",
     title: "COLLECTION VERSO",
-    img: "/collections/cuisine/collection-1.jpg",
+    img: "/collections/sdb/collection-1.jpg",
   },
   {
     slug: "delta",
     title: "COLLECTION DELTA",
-    img: "/collections/cuisine/collection-2.jpg",
+    img: "/collections/sdb/collection-2.jpg",
   },
   {
     slug: "kyoto",
     title: "COLLECTION KYOTO",
-    img: "/collections/cuisine/collection-3.jpg",
+    img: "/collections/sdb/collection-3.jpg",
   },
   {
     slug: "oslo",
     title: "COLLECTION OSLO",
-    img: "/collections/cuisine/collection-4.jpg",
+    img: "/collections/sdb/collection-4.jpg",
   },
   {
     slug: "linea",
     title: "COLLECTION LINEA",
-    img: "/collections/cuisine/collection-5.jpg",
+    img: "/collections/sdb/collection-5.jpg",
   },
   {
     slug: "urban",
     title: "COLLECTION URBAN",
-    img: "/collections/cuisine/collection-6.jpg",
+    img: "/collections/sdb/collection-6.jpg",
   },
   {
     slug: "natura",
     title: "COLLECTION NATURA",
-    img: "/collections/cuisine/collection-7.jpg",
+    img: "/collections/sdb/collection-7.jpg",
   },
   {
     slug: "soho",
     title: "COLLECTION SOHO",
-    img: "/collections/cuisine/collection-8.jpg",
+    img: "/collections/sdb/collection-8.jpg",
   },
   {
     slug: "roma",
     title: "COLLECTION ROMA",
-    img: "/collections/cuisine/collection-9.jpg",
+    img: "/collections/sdb/collection-9.jpg",
   },
 ];
 
-export default function ServicesCuisineCat() {
+export default function ServicesSdbCat() {
   return (
     <section className={styles.section}>
       {/* --- Bandeau top --- */}
@@ -63,7 +63,7 @@ export default function ServicesCuisineCat() {
         />
         <div className={styles.heroOverlay} />
         <div className={styles.heroContent}>
-          <h1>Nos collections de cuisines</h1>
+          <h1>Nos collections de salle de bains</h1>
           <p>
             Design, élégance et savoir-faire , découvrez l’univers CMC à travers
             nos collections.

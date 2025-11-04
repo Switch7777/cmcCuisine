@@ -68,10 +68,6 @@ export default function RealisationsSection() {
 
   return (
     <section className={styles.section} id="realisations">
-      <div className={styles.headerRow}>
-        <div className={styles.kicker}>NOS RÉALISATIONS</div>
-      </div>
-
       <div className={styles.carousel} aria-roledescription="carousel">
         <div
           ref={trackRef}

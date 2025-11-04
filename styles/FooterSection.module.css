@@ -1,5 +1,4 @@
 .footer {
-  margin-top: clamp(40px, 7vw, 100px);
   background-color: #f9f5f2;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
