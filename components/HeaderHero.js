@@ -119,8 +119,8 @@ export default function HeaderHero() {
             <Image
               src="/logoblancmoins.png"
               alt={L.logoAlt}
-              width={260}
-              height={90}
+              width={390} // anciennement 260 → x1.5
+              height={135} // anciennement 90 → x1.5
               priority
             />
           </div>

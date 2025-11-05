@@ -14,13 +14,11 @@ function LogoMiddleMainDeux() {
         {lang === "fr" ? (
           <>
             Des meubles de qualité <strong>allemande</strong>,{" "}
-            <strong>italienne</strong> et <strong>française</strong>, garantis{" "}
-            <strong>10 ans</strong>.
+            <strong>italienne</strong> et <strong>française</strong>.
           </>
         ) : (
           <>
-            <strong>High-quality German, Italian and French furniture</strong>,{" "}
-            guaranteed for <strong>10 years</strong>.
+            <strong>High-quality German, Italian and French furniture</strong>.
           </>
         )}
       </p>

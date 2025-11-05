@@ -90,6 +90,21 @@ export default function NavBar() {
         className={`${styles.nav} ${solid ? styles.solid : styles.transparent}`}
         aria-label={L.navLabel}
       >
+        {/* Burger (mobile only) - à gauche */}
+        <button
+          className={`${styles.burger} ${open ? styles.burgerOpen : ""}`}
+          aria-label={open ? L.menuClose : L.menuOpen}
+          onClick={() => {
+            setOpen((v) => !v);
+            setMobileServicesOpen(false);
+          }}
+          type="button"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
         <div className={styles.brand}>
           <Link href="/" legacyBehavior>
             <a className={styles.brandLink} aria-label={L.brandAria}>
@@ -209,20 +224,37 @@ export default function NavBar() {
           </a>
         </div>
 
-        {/* Burger (mobile only) */}
-        <button
-          className={`${styles.burger} ${open ? styles.burgerOpen : ""}`}
-          aria-label={open ? L.menuClose : L.menuOpen}
-          onClick={() => {
-            setOpen((v) => !v);
-            setMobileServicesOpen(false);
-          }}
-          type="button"
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+        {/* Lang switch mobile - à droite en dehors du burger */}
+        <div className={styles.mobileLangSwitch} role="group" aria-label="Lang">
+          <button
+            onClick={() => switchLang("fr")}
+            className={`${styles.langBtn} ${
+              lang === "fr" ? styles.activeLang : ""
+            }`}
+            aria-label="Version française"
+            type="button"
+          >
+            <ReactCountryFlag
+              countryCode="FR"
+              svg
+              style={{ width: 24, height: 16, borderRadius: 3 }}
+            />
+          </button>
+          <button
+            onClick={() => switchLang("en")}
+            className={`${styles.langBtn} ${
+              lang === "en" ? styles.activeLang : ""
+            }`}
+            aria-label="English version"
+            type="button"
+          >
+            <ReactCountryFlag
+              countryCode="GB"
+              svg
+              style={{ width: 24, height: 16, borderRadius: 3 }}
+            />
+          </button>
+        </div>
       </nav>
 
       {/* Menu mobile */}
@@ -283,31 +315,6 @@ export default function NavBar() {
               <User size={18} strokeWidth={1.5} />
             </a>
           </Link>
-
-          <div className={styles.mobileLang} role="group" aria-label="Lang">
-            <button
-              onClick={() => switchLang("fr")}
-              className={lang === "fr" ? styles.mobileLangActive : ""}
-              type="button"
-            >
-              <ReactCountryFlag
-                countryCode="FR"
-                svg
-                style={{ width: 24, height: 16, borderRadius: 3 }}
-              />
-            </button>
-            <button
-              onClick={() => switchLang("en")}
-              className={lang === "en" ? styles.mobileLangActive : ""}
-              type="button"
-            >
-              <ReactCountryFlag
-                countryCode="GB"
-                svg
-                style={{ width: 24, height: 16, borderRadius: 3 }}
-              />
-            </button>
-          </div>
 
           <a
             href={EXTERNAL_URL}

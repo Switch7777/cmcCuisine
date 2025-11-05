@@ -303,6 +303,12 @@
   display: block;
 }
 
+/* Effet sur drapeau actif */
+.activeLang {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+}
+
 /* ===== EXTERNAL BTN ===== */
 .externalBtn {
   display: inline-flex;
@@ -333,6 +339,8 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(0, 0, 0, 0.15);
   color: #fff;
+  grid-column: 1;
+  justify-self: start;
 }
 
 .burger span {
@@ -365,6 +373,15 @@
 .burgerOpen span:nth-child(3) {
   top: 19px;
   transform: rotate(-45deg);
+}
+
+/* ===== LANG SWITCH MOBILE (en dehors du burger) ===== */
+.mobileLangSwitch {
+  display: none;
+  gap: 8px;
+  align-items: center;
+  grid-column: 3;
+  justify-self: end;
 }
 
 /* ===== MOBILE MENU ===== */
@@ -533,8 +550,9 @@
   }
   .burger {
     display: inline-block !important;
-    grid-column: 3;
-    justify-self: end;
+  }
+  .mobileLangSwitch {
+    display: flex !important;
   }
 }
 
@@ -555,11 +573,7 @@
 }
 
 .mobileLang {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  margin-top: 6px;
+  display: none; /* ✅ on retire complètement du menu burger */
 }
 
 .mobileLang button {
@@ -604,7 +618,7 @@
 }
 
 /* 3) juste avant de passer en mobile (avant 900px),
-   on évite que ça s’écrase */
+   on évite que ça s'écrase */
 @media (max-width: 1024px) {
   .links {
     gap: 10px;
