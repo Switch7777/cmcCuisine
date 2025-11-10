@@ -11,7 +11,7 @@ const TEAM = [
   },
   {
     key: "martine",
-    img: "/collaborateurs/martine.jpg",
+    img: "/collaborateurs/martine.JPG",
     fr: "Martine Jarc, Directrice administrative et financière (Associée)",
     en: "Martine Jarc, Administrative & Financial Director (Partner)",
   },
