@@ -2,8 +2,9 @@ import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "../styles/LoginPage.module.css";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavBarNew";
 import FooterSection from "../components/FooterSection";
 import { useLang } from "../context/LangContext";
 
@@ -20,6 +21,7 @@ const LABELS = {
     passwordPlaceholder: "Votre mot de passe",
     show: "Afficher",
     hide: "Masquer",
+    error: "Identifiants incorrects.",
   },
   en: {
     title: "Login",
@@ -33,20 +35,67 @@ const LABELS = {
     passwordPlaceholder: "Your password",
     show: "Show",
     hide: "Hide",
+    error: "Invalid credentials.",
   },
 };
 
 export default function LoginPage() {
   const { lang } = useLang();
   const L = LABELS[lang] ?? LABELS.fr;
+  const router = useRouter();
 
   const [showPwd, setShowPwd] = useState(false);
   const [form, setForm] = useState({ email: "", password: "", remember: true });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    console.log("login ->", form);
-    // TODO: branchement de ton appel API (POST /api/auth/login)
+    setError("");
+    setLoading(true);
+
+    try {
+      // tu peux mettre NEXT_PUBLIC_API_URL dans ton .env.local
+      const API_BASE = process.env.NEXT_PUBLIC_API_URL;
+
+      const res = await fetch(`${API_BASE}/api/auth/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: form.email,
+          password: form.password,
+        }),
+      });
+
+      if (!res.ok) {
+        // 400 ou 401
+
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.message || L.error);
+      } else {
+        console.log("T'es connecté baby");
+      }
+
+      const data = await res.json();
+
+      // on stocke le token pour les futurs appels protégés
+      if (typeof window !== "undefined") {
+        localStorage.setItem("cmc_token", data.token);
+        localStorage.setItem(
+          "cmc_user",
+          JSON.stringify({ id: data.user.id, email: data.user.email })
+        );
+      }
+
+      // redirection vers une page protégée (à créer)
+      router.push("/admin");
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -125,27 +174,16 @@ export default function LoginPage() {
                 </button>
               </div>
 
-              {/* Options */}
-              <div className={styles.row}>
-                <label className={styles.check}>
-                  <input
-                    type="checkbox"
-                    checked={form.remember}
-                    onChange={(e) =>
-                      setForm((f) => ({ ...f, remember: e.target.checked }))
-                    }
-                  />
-                  <span>{L.remember}</span>
-                </label>
-
-                <Link href="/reset-password" legacyBehavior>
-                  <a className={styles.link}>{L.forgot}</a>
-                </Link>
-              </div>
+              {/* message d'erreur */}
+              {error ? <p className={styles.error}>{error}</p> : null}
 
               {/* Bouton de connexion */}
-              <button type="submit" className={styles.submit}>
-                {L.login}
+              <button
+                type="submit"
+                className={styles.submit}
+                disabled={loading}
+              >
+                {loading ? "..." : L.login}
               </button>
             </form>
           </div>

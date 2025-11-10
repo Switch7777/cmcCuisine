@@ -2,7 +2,8 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import styles from "../styles/RealisationsSection.module.css";
 
-const IMAGES = [
+// fallback si le backend ne répond pas
+const FALLBACK_IMAGES = [
   {
     src: "/realisations/real-1.jpg",
     alt: "Cuisine sur-mesure — réalisation 1",
@@ -26,15 +27,46 @@ const IMAGES = [
 ];
 
 export default function RealisationsSection() {
+  const [images, setImages] = useState(FALLBACK_IMAGES);
   const [index, setIndex] = useState(0);
   const trackRef = useRef(null);
   const touchStartX = useRef(null);
   const touchActive = useRef(false);
 
-  const goTo = useCallback((i) => {
-    const n = IMAGES.length;
-    setIndex(((i % n) + n) % n);
+  // récupère les images Cloudinary depuis ton backend
+  useEffect(() => {
+    const API_BASE = "http://localhost:5000";
+
+    fetch(`${API_BASE}/api/realisations`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (Array.isArray(data) && data.length > 0) {
+          setImages(
+            data.map((img) => ({
+              src: img.url,
+              alt:
+                img?.context?.alt ||
+                img?.public_id ||
+                "Réalisation CMC Cuisine",
+            }))
+          );
+        }
+      })
+      .catch((err) => {
+        console.warn(
+          "Impossible de charger depuis le backend, on garde le fallback",
+          err
+        );
+      });
   }, []);
+
+  const goTo = useCallback(
+    (i) => {
+      const n = images.length;
+      setIndex(((i % n) + n) % n);
+    },
+    [images.length]
+  );
 
   const next = useCallback(() => goTo(index + 1), [index, goTo]);
   const prev = useCallback(() => goTo(index - 1), [index, goTo]);
@@ -77,17 +109,18 @@ export default function RealisationsSection() {
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          {IMAGES.map((img, i) => (
-            <figure className={styles.slide} key={i}>
-              <Image
-                src={img.src}
-                alt={img.alt}
-                layout="fill"
-                objectFit="cover"
-                className={styles.slideImg}
-                priority={i === 0}
-              />
-              {/* 🔥 figcaption supprimé */}
+          {images.map((img, i) => (
+            <figure className={styles.slide} key={img.src ?? i}>
+              <div className={styles.imageWrapper}>
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  layout="fill" // ✅ Next 12
+                  objectFit="cover"
+                  className={styles.slideImg}
+                  priority={i === 0}
+                />
+              </div>
             </figure>
           ))}
         </div>
@@ -114,7 +147,7 @@ export default function RealisationsSection() {
           role="tablist"
           aria-label="Sélecteur de diapos"
         >
-          {IMAGES.map((_, i) => (
+          {images.map((_, i) => (
             <button
               key={i}
               className={`${styles.dot} ${i === index ? styles.dotActive : ""}`}
