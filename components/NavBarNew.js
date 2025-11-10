@@ -15,6 +15,7 @@ const NAV_LABELS = {
     servicesKitchen: "Cuisines",
     servicesBathroom: "Salle de bain",
     servicesCloset: "Placard",
+    servicesRenovation: "Rénovation",
     works: "Nos réalisations",
     aboutUs: "Qui sommes-nous",
     cta: "Demandez un rendez-vous",
@@ -31,6 +32,7 @@ const NAV_LABELS = {
     servicesKitchen: "Kitchens",
     servicesBathroom: "Bathrooms",
     servicesCloset: "Closets",
+    servicesRenovation: "Renovation",
     works: "Our Kitchens",
     aboutUs: "About Us",
     cta: "Book a Consultation",
@@ -72,10 +74,10 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [solid]);
 
-  // resize → on ferme le mobile
+  // resize → on ferme le mobile (iPad inclus à 1024px)
   useEffect(() => {
     const onResize = () => {
-      if (window.innerWidth > 900) {
+      if (window.innerWidth > 1024) {
         setOpen(false);
         setMobileServicesOpen(false);
       }
@@ -90,7 +92,7 @@ export default function NavBar() {
         className={`${styles.nav} ${solid ? styles.solid : styles.transparent}`}
         aria-label={L.navLabel}
       >
-        {/* Burger (mobile only) - à gauche */}
+        {/* Burger (mobile + iPad) - à gauche */}
         <button
           className={`${styles.burger} ${open ? styles.burgerOpen : ""}`}
           aria-label={open ? L.menuClose : L.menuOpen}
@@ -121,7 +123,7 @@ export default function NavBar() {
           </Link>
         </div>
 
-        {/* Liens centraux (desktop) */}
+        {/* Liens centraux (desktop uniquement) */}
         <div className={styles.links}>
           <Link href="/" legacyBehavior>
             <a className={styles.navItem}>{L.home}</a>
@@ -155,6 +157,15 @@ export default function NavBar() {
                   {L.servicesCloset}
                 </a>
               </Link>
+              <a
+                href={EXTERNAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                role="menuitem"
+                className={styles.submenuItem}
+              >
+                {L.servicesRenovation}
+              </a>
             </div>
           </div>
 
@@ -170,16 +181,14 @@ export default function NavBar() {
           </Link>
         </div>
 
-        {/* Droite (desktop) */}
+        {/* Droite (desktop uniquement) */}
         <div className={styles.rightIcons}>
           <Link href="/login" legacyBehavior>
             <a className={styles.profileLink} aria-label={L.accountAria}>
               <User size={22} strokeWidth={1.6} />
             </a>
           </Link>
-
           <div className={styles.vDivider} aria-hidden="true" />
-
           <div className={styles.langSwitch} role="group" aria-label="Lang">
             <button
               onClick={() => switchLang("fr")}
@@ -210,21 +219,9 @@ export default function NavBar() {
               />
             </button>
           </div>
-
-          <div className={styles.vDivider} aria-hidden="true" />
-
-          <a
-            href={EXTERNAL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.externalBtn}
-          >
-            <ExternalLink size={18} strokeWidth={1.8} />
-            <span>{L.outBtn}</span>
-          </a>
         </div>
 
-        {/* Lang switch mobile - à droite en dehors du burger */}
+        {/* Lang switch mobile + iPad - à droite en dehors du burger */}
         <div className={styles.mobileLangSwitch} role="group" aria-label="Lang">
           <button
             onClick={() => switchLang("fr")}
@@ -257,7 +254,7 @@ export default function NavBar() {
         </div>
       </nav>
 
-      {/* Menu mobile */}
+      {/* Menu mobile + iPad */}
       <div
         className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ""}`}
       >
@@ -295,6 +292,14 @@ export default function NavBar() {
               <Link href="/servicesPlacard" legacyBehavior>
                 <a onClick={() => setOpen(false)}>{L.servicesCloset}</a>
               </Link>
+              <a
+                href={EXTERNAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+              >
+                {L.servicesRenovation}
+              </a>
             </div>
           )}
 

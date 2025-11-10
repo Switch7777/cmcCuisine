@@ -1,8 +1,8 @@
 /* ===== NAV ===== */
 .nav {
   --navH: 40px;
-  --logoW: 140px; /* avant : 166px */
-  --logoH: 50px; /* avant : 60px  */
+  --logoW: 140px;
+  --logoH: 50px;
   --logoMaxW: 110px;
 
   position: fixed;
@@ -40,7 +40,7 @@
   );
 }
 
-/* forcer le noir quand la nav est solid */
+/* forcer le blanc quand la nav est solid */
 .solid .navItem,
 .solid .servicesLink,
 .solid .profileLink,
@@ -52,16 +52,10 @@
 .solid a {
   color: #ffffff !important;
   stroke: #ffffff !important;
-
   text-shadow: none;
 }
 
 /* séparateur */
-.solid .vDivider {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-/* Séparateur */
 .solid .vDivider {
   background: rgba(255, 255, 255, 0.25);
 }
@@ -218,19 +212,18 @@
   line-height: var(--navH);
   padding: 0 18px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.18); /* même effet que CMC Habitat */
+  background: rgba(255, 255, 255, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.35);
   color: rgba(255, 255, 255, 0.95);
   text-decoration: none !important;
   backdrop-filter: blur(6px) saturate(150%);
   -webkit-backdrop-filter: blur(6px) saturate(150%);
   transition: all 0.25s ease;
-  white-space: nowrap; /* reste sur une seule ligne */
-  max-width: 230px; /* tu peux ajuster */
+  white-space: nowrap;
+  max-width: 230px;
   text-align: center;
 }
 
-/* hover doux et lumineux */
 .cta:hover {
   background: rgba(255, 255, 255, 0.28);
   border-color: rgba(255, 255, 255, 0.55);
@@ -375,7 +368,7 @@
   transform: rotate(-45deg);
 }
 
-/* ===== LANG SWITCH MOBILE (en dehors du burger) ===== */
+/* ===== LANG SWITCH MOBILE + IPAD (en dehors du burger) ===== */
 .mobileLangSwitch {
   display: none;
   gap: 8px;
@@ -384,7 +377,7 @@
   justify-self: end;
 }
 
-/* ===== MOBILE MENU ===== */
+/* ===== MOBILE MENU + IPAD ===== */
 .mobileMenu {
   position: fixed;
   inset: 0;
@@ -420,7 +413,7 @@
 }
 
 /* tous les liens du menu mobile SAUF le lien profil */
-.mobileInner a:not(.profileLink) {
+.mobileInner a:not(.mobileProfile) {
   display: block;
   padding: 12px 14px;
   border-radius: 10px;
@@ -429,19 +422,6 @@
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid transparent;
   transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-/* le lien profil : petit bouton centré */
-.mobileInner .profileLink {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  margin: 0 auto 8px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .mobileInner a:hover {
@@ -459,8 +439,8 @@
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid transparent;
   cursor: pointer;
-  font-size: 1rem; /* même taille que les <a> */
-  font-family: inherit; /* même police que le reste */
+  font-size: 1rem;
+  font-family: inherit;
   line-height: 1.4;
 }
 
@@ -483,14 +463,14 @@
 }
 
 .mobileSubmenuOpen {
-  max-height: 300px;
-  padding: 6px 4px 0 8px; /* ✅ seulement ouvert */
-  margin-left: 6px; /* ✅ seulement ouvert */
+  max-height: 400px;
+  padding: 6px 4px 0 8px;
+  margin-left: 6px;
 }
 
 .mobileSubmenu a {
   padding: 10px 12px;
-  font-size: 0.95rem; /* ou 1rem si tu veux identique */
+  font-size: 0.95rem;
 }
 
 .mobileCta {
@@ -500,7 +480,7 @@
   border-radius: 999px;
   margin-top: 6px;
 }
-.mobileInner .profileLink,
+
 .mobileInner .mobileProfile {
   display: flex;
   justify-content: center;
@@ -512,6 +492,7 @@
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .mobileCta:hover {
   background: transparent !important;
   color: #fff !important;
@@ -540,8 +521,9 @@
   border-color: #fff;
 }
 
-/* ===== BREAKPOINT ===== */
-@media (max-width: 900px) {
+/* ===== BREAKPOINT DESKTOP → IPAD/MOBILE ===== */
+/* iPad et Mobile : afficher burger + drapeaux, cacher le reste */
+@media (max-width: 1024px) {
   .brand,
   .links,
   .rightIcons,
@@ -553,6 +535,21 @@
   }
   .mobileLangSwitch {
     display: flex !important;
+  }
+}
+
+/* ===== AJUSTEMENTS AVANT BREAKPOINT ===== */
+@media (max-width: 1180px) {
+  .links {
+    gap: 14px;
+  }
+  .navItem,
+  .servicesLink {
+    padding: 0 10px;
+  }
+  .cta {
+    padding: 0 14px;
+    font-size: 0.9rem;
   }
 }
 
@@ -569,61 +566,5 @@
   .externalBtn,
   .logoWrap :global(img) {
     transition: none !important;
-  }
-}
-
-.mobileLang {
-  display: none; /* ✅ on retire complètement du menu burger */
-}
-
-.mobileLang button {
-  appearance: none;
-  border: none;
-  background: transparent;
-  padding: 0;
-  line-height: 0;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: transform 0.15s ease;
-}
-
-.mobileLang button:hover {
-  transform: scale(1.08);
-}
-
-/* ✅ contour doux et propre uniquement sur le drapeau actif */
-.mobileLangActive {
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7);
-  border-radius: 6px;
-}
-
-.mobileLang img,
-.mobileLang svg {
-  display: block;
-  border: none !important; /* enlève tout cadre éventuel */
-  box-shadow: none !important;
-}
-@media (max-width: 1180px) {
-  .links {
-    gap: 14px;
-  }
-  .navItem,
-  .servicesLink {
-    padding: 0 10px;
-  }
-  .cta {
-    padding: 0 14px; /* un peu moins large */
-    font-size: 0.9rem;
-  }
-}
-
-/* 3) juste avant de passer en mobile (avant 900px),
-   on évite que ça s'écrase */
-@media (max-width: 1024px) {
-  .links {
-    gap: 10px;
-  }
-  .brandLink {
-    width: 120px;
   }
 }

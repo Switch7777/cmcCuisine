@@ -1,144 +1,237 @@
 .section {
-  display: grid;
-  grid-template-columns: 1fr minmax(40px, 60px) 1fr;
-  gap: clamp(12px, 2vw, 24px);
-  padding: clamp(16px, 4vw, 48px);
-  background-color: #f9f5f2;
-}
-
-/* Colonnes gauche / droite */
-.leftCol,
-.rightCol {
+  background: #f7f6f3;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
-.spacer {
-  height: clamp(40px, 6vh, 120px);
-}
-
-/* Texte vertical central */
-.gutter {
+/* ===== BANNIÈRE ===== */
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  height: 28vh;
+  max-height: 320px;
+  background: url("/banner/cuisine.jpg") center center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.verticalLabel {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  letter-spacing: 0.25em;
-  font-size: clamp(16px, 2vw, 28px);
-  font-weight: 600;
-  color: rgba(0, 0, 0, 0.75);
-  white-space: nowrap;
-  text-transform: uppercase;
+
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
 }
 
-/* Bloc texte */
-.textBlock {
-  max-width: 52ch;
-  margin-bottom: clamp(12px, 2vw, 20px);
-}
-.title {
-  font-size: clamp(18px, 2vw, 30px);
-  line-height: 1.2;
-  margin: 0 0 12px;
-}
-.textBlock p {
-  color: rgba(0, 0, 0, 0.72);
-  line-height: 1.6;
-  margin: 0 0 10px;
-}
-
-/* Cadres images (beaucoup plus petits et centrés) */
-.imgFrameWide,
-.imgFrameTall {
+.overlay {
   position: relative;
-  overflow: hidden;
-  border-radius: 6px;
-  background: #f4f4f4;
-  width: 40%; /* très petit */
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  padding: 0 1.5rem;
+  max-width: 1100px;
+}
+
+.title {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.8rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 54rem;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* ===== CONTENU ===== */
+.content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 60px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.intro {
+  text-align: center;
+  color: rgba(15, 23, 42, 0.7);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 720px;
   margin: 0 auto;
 }
 
-.imgFrameWide {
-  aspect-ratio: 4 / 5;
-  margin-top: clamp(6px, 1vw, 10px);
+/* ===== ÉQUIPE ===== */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  justify-content: center;
 }
 
-.imgFrameTall {
-  aspect-ratio: 4 / 5;
-  margin-top: clamp(6px, 1vw, 10px);
+.card {
+  flex: 0 1 320px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  transition: transform 0.25s ease;
 }
 
-/* Image : grisée par défaut */
-.img {
-  filter: grayscale(100%) brightness(78%);
-  opacity: 0.9;
-  object-fit: cover;
-  transform: scale(0.75) translateY(-5%);
-  transform-origin: center center;
-  transition: filter 0.35s ease, opacity 0.35s ease; /* transition douce */
+.card:hover {
+  transform: translateY(-4px);
 }
 
-/* 👉 Au survol: repasse en couleurs */
-.imgFrameWide:hover .img,
-.imgFrameTall:hover .img {
-  filter: grayscale(0%) brightness(100%);
-  opacity: 1;
+/* === PHOTOS === */
+.photoWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
 }
 
-/* Signatures et légendes */
-.signature {
-  margin-top: 6px;
-  font-style: italic;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 0.9rem;
+.photo {
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: grayscale(100%);
+}
+
+.card:hover .photo {
+  transform: scale(1.04);
+  filter: grayscale(0);
+}
+
+.name {
+  margin-top: 16px;
+  font-weight: 500;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+/* ===== NOS POSEURS / NOTRE HISTOIRE ===== */
+.installersBlock {
+  width: 100%;
+  background: #fff;
+  padding: 80px 24px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
-.legend {
-  margin-top: 6px;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 0.9rem;
-  text-align: center;
+
+.installersTitle {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 2rem;
+  color: #1f2937;
+  text-align: center; /* ✅ Titre centré */
 }
-.signatureInline {
-  font-style: italic;
+
+/* === IMAGE DE POSEURS / HISTOIRE === */
+.installersImage {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 2.5rem;
 }
 
-/* Responsive mobile */
-@media (max-width: 900px) {
-  .section {
-    grid-template-columns: 1fr;
+.installersImage img {
+  filter: grayscale(100%);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.installersImage:hover img {
+  transform: scale(1.04);
+  filter: grayscale(0);
+}
+
+/* === COMMENTAIRES === */
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 700px;
+  color: rgba(15, 23, 42, 0.75);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.comments p {
+  margin: 0;
+  padding-left: 0; /* ✅ Suppression du retrait */
+  border-left: none; /* ✅ Suppression de la barre verticale */
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .banner {
+    min-height: 220px;
+    height: auto;
+    padding: 3.5rem 0;
   }
 
-  .gutter {
-    height: 32px;
-    order: -1;
+  .content {
+    padding: 50px 16px 60px;
+    gap: 50px;
   }
 
-  .verticalLabel {
-    writing-mode: horizontal-tb;
-    transform: none;
-    font-size: 11px;
-    letter-spacing: 0.25em;
+  .installersBlock {
+    padding: 60px 16px 80px;
   }
 
-  .spacer {
-    height: 24px;
+  .card {
+    flex: 0 1 160px;
+    max-width: 170px;
   }
 
-  .textBlock {
-    max-width: 100%;
+  .name {
+    font-size: 0.9rem;
+    margin-top: 12px;
   }
 
-  .imgFrameWide,
-  .imgFrameTall {
-    width: 55%; /* un peu plus grand sur mobile */
+  .installersImage {
+    aspect-ratio: 4 / 3;
   }
 
-  .img {
-    transform: scale(0.8) translateY(-3%);
+  .comments {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    gap: 24px;
+  }
+
+  .card {
+    flex: 0 1 140px;
+    max-width: 150px;
+  }
+
+  .name {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+}
+
+@media (min-width: 769px) {
+  .card {
+    flex: 0 1 320px;
+    max-width: 340px;
   }
 }
