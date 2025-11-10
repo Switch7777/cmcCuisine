@@ -12,12 +12,12 @@ const LABELS = {
   fr: {
     title: "Connexion",
     subtitle: "Accédez à votre espace professionnel.",
-    email: "Adresse e-mail",
+    identifier: "Identifiant",
     password: "Mot de passe",
     remember: "Se souvenir de moi",
     forgot: "Mot de passe oublié ?",
     login: "Se connecter",
-    emailPlaceholder: "vous@exemple.com",
+    identifierPlaceholder: "Votre identifiant",
     passwordPlaceholder: "Votre mot de passe",
     show: "Afficher",
     hide: "Masquer",
@@ -26,12 +26,12 @@ const LABELS = {
   en: {
     title: "Login",
     subtitle: "Access your professional space.",
-    email: "Email address",
+    identifier: "Username",
     password: "Password",
     remember: "Remember me",
     forgot: "Forgot password?",
     login: "Sign in",
-    emailPlaceholder: "you@example.com",
+    identifierPlaceholder: "Your username",
     passwordPlaceholder: "Your password",
     show: "Show",
     hide: "Hide",
@@ -45,7 +45,11 @@ export default function LoginPage() {
   const router = useRouter();
 
   const [showPwd, setShowPwd] = useState(false);
-  const [form, setForm] = useState({ email: "", password: "", remember: true });
+  const [form, setForm] = useState({
+    identifier: "",
+    password: "",
+    remember: true,
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -55,8 +59,8 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      // tu peux mettre NfefeffeEXT_PUBLIC_API_URL dans ton .env.local
-      const API_BASE = process.env.NEXT_PUBLIC_API_URL;
+      const API_BASE =
+        process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
       const res = await fetch(`${API_BASE}/api/auth/login`, {
         method: "POST",
@@ -69,27 +73,24 @@ export default function LoginPage() {
         }),
       });
 
+      const data = await res.json().catch(() => ({}));
+
       if (!res.ok) {
-        // 400 ou 401
-
-        const data = await res.json().catch(() => ({}));
         throw new Error(data.message || L.error);
-      } else {
-        console.log("T'es connecté baby");
       }
-
-      const data = await res.json();
 
       // on stocke le token pour les futurs appels protégés
       if (typeof window !== "undefined") {
         localStorage.setItem("cmc_token", data.token);
         localStorage.setItem(
           "cmc_user",
-          JSON.stringify({ id: data.user.id, email: data.user.email })
+          JSON.stringify({
+            id: data.user.id,
+            identifier: data.user.identifier,
+          })
         );
       }
 
-      // redirection vers une page protégée (à créer)
       router.push("/admin");
     } catch (err) {
       setError(err.message);
@@ -130,21 +131,21 @@ export default function LoginPage() {
             <p className={styles.subtitle}>{L.subtitle}</p>
 
             <form className={styles.form} onSubmit={onSubmit}>
-              {/* Email */}
-              <label className={styles.label} htmlFor="email">
-                {L.email}
+              {/* Identifiant */}
+              <label className={styles.label} htmlFor="identifier">
+                {L.identifier}
               </label>
               <input
-                id="email"
-                type="email"
+                id="identifier"
+                type="text"
                 required
                 className={styles.input}
-                placeholder={L.emailPlaceholder}
+                placeholder={L.identifierPlaceholder}
                 value={form.email}
                 onChange={(e) =>
                   setForm((f) => ({ ...f, email: e.target.value }))
                 }
-                autoComplete="email"
+                autoComplete="username"
               />
 
               {/* Mot de passe */}
@@ -176,6 +177,24 @@ export default function LoginPage() {
 
               {/* message d'erreur */}
               {error ? <p className={styles.error}>{error}</p> : null}
+
+              {/* Option "remember" + mot de passe oublié (si tu la veux encore) */}
+              <div className={styles.row}>
+                <label className={styles.check}>
+                  <input
+                    type="checkbox"
+                    checked={form.remember}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, remember: e.target.checked }))
+                    }
+                  />
+                  <span>{L.remember}</span>
+                </label>
+
+                <Link href="/reset-password" legacyBehavior>
+                  <a className={styles.link}>{L.forgot}</a>
+                </Link>
+              </div>
 
               {/* Bouton de connexion */}
               <button
