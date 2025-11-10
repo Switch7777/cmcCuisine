@@ -55,7 +55,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      // tu peux mettre NEXT_PUBLIC_API_URL dans ton .env.local
+      // tu peux mettre NfefeffeEXT_PUBLIC_API_URL dans ton .env.local
       const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
       const res = await fetch(`${API_BASE}/api/auth/login`, {
