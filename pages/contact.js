@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Navbar from "../components/Navbar.js";
+import Navbar from "../components/NavBarNew.js";
 import ContactSection from "../components/ContactSection.js";
 import FooterSection from "../components/FooterSection.js";
 

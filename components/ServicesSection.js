@@ -7,7 +7,7 @@ const CARDS = {
   fr: [
     {
       label: "Cuisines",
-      href: "/servicesCuisines",
+      href: "/servicesCuisine",
       img: "/services/cuisines.jpg",
       alt: "Cuisine sur-mesure",
     },
@@ -27,7 +27,7 @@ const CARDS = {
   en: [
     {
       label: "Kitchens",
-      href: "/servicesCuisines",
+      href: "/servicesCuisine",
       img: "/services/cuisines.jpg",
       alt: "Custom kitchen",
     },

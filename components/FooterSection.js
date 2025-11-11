@@ -40,16 +40,16 @@ export default function FooterSection() {
 
   return (
     <footer className={styles.footer}>
-      {/* Bandeau principal */}
+      {/* === Section principale === */}
       <div className={styles.wrap}>
-        {/* Col gauche : logo + baseline */}
+        {/* Col gauche : logo + réseaux */}
         <div className={styles.brandCol}>
           <div className={styles.logoBox}>
             <Image
               src="/logo.png"
               alt={T.showroomAlt}
               layout="responsive"
-              width={220}
+              width={190}
               height={72}
               priority
             />
@@ -57,24 +57,53 @@ export default function FooterSection() {
           <p className={styles.baseline}>{T.baseline}</p>
 
           <div className={styles.socials}>
-            <a href="#" aria-label="Instagram" className={styles.socLink}>
-              {/* Icône inline */}
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/cmccuisine/"
+              aria-label="Instagram"
+              className={styles.socLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg viewBox="0 0 24 24" className={styles.icon}>
                 <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6.5-.9a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z" />
               </svg>
             </a>
-            <a href="#" aria-label="" className={styles.socLink}>
-              {/* Icône inline */}
-              <svg viewBox="0 0 24 24" className={styles.icon}>
-                <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6.5-.9a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z" />
-              </svg>
-            </a>
-            <a href="#" aria-label="Facebook" className={styles.socLink}>
+
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/cmccuisines06/?locale=fr_FR"
+              aria-label="Facebook"
+              className={styles.socLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg viewBox="0 0 24 24" className={styles.icon}>
                 <path d="M13 22v-8h3l1-4h-4V7.5c0-1.1.3-1.8 1.9-1.8H17V2.2C16.3 2.1 15.3 2 14.2 2 11.6 2 10 3.5 10 6.2V10H7v4h3v8h3z" />
               </svg>
             </a>
-            <a href="#" aria-label="Pinterest" className={styles.socLink}>
+
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/company/centre-mediterraneen-de-la-cuisine/?originalSubdomain=fr"
+              aria-label="LinkedIn"
+              className={styles.socLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg viewBox="0 0 24 24" className={styles.icon}>
+                <path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zM9 8.98h3.8v1.62h.05c.53-.95 1.83-1.95 3.77-1.95 4.04 0 4.78 2.66 4.78 6.11v6.22h-4v-5.5c0-1.31-.02-3-1.83-3-1.84 0-2.12 1.43-2.12 2.9v5.6H9v-12z" />
+              </svg>
+            </a>
+
+            {/* Pinterest */}
+            <a
+              href="https://fr.pinterest.com/cmccuisine/"
+              aria-label="Pinterest"
+              className={styles.socLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg viewBox="0 0 24 24" className={styles.icon}>
                 <path d="M12 2a9.9 9.9 0 00-3.5 19.2c-.1-.8-.2-2 .1-2.9.2-.7 1.3-4.5 1.3-4.5s-.3-.7-.3-1.7c0-1.6.9-2.9 2-2.9.9 0 1.3.7 1.3 1.6 0 1-.6 2.6-.9 4-.3 1.2.6 2.1 1.8 2.1 2.1 0 3.7-2.2 3.7-5.3 0-2.8-2-4.8-4.9-4.8-3.3 0-5.2 2.5-5.2 5.1 0 1 .4 2.1 1 2.7.1.1.1.1.1 0 0-.2.1-.8.2-1 .1-.2.1-.2 0-.4a2.2 2.2 0 01-.5-1.4c0-2 1.4-3.9 4.2-3.9 2.3 0 3.9 1.6 3.9 3.8 0 2.4-1.2 4.2-2.9 4.2-.9 0-1.5-.8-1.3-1.7.3-1 .8-2.1.8-2.8 0-.6-.3-1.1-1-1.1-.8 0-1.5.8-1.5 1.9 0 .7.2 1.1.2 1.1s-.8 3.3-1 3.9c-.3 1.1-.1 2.6 0 3.6A10 10 0 1012 2z" />
               </svg>
@@ -82,32 +111,32 @@ export default function FooterSection() {
           </div>
         </div>
 
-        {/* Gouttière séparatrice */}
+        {/* Gouttière */}
         <div className={styles.gutter} aria-hidden="true" />
 
-        {/* Col centre : navigation */}
+        {/* Navigation */}
         <nav className={styles.navCol} aria-label={T.navAria}>
           <h3 className={styles.navTitle}>{T.navTitle}</h3>
           <ul className={styles.navList}>
             <li>
-              <a href="#showroom">{T.home}</a>
+              <a href="/">{T.home}</a>
             </li>
             <li>
-              <a href="#savoir-faire">{T.works}</a>
+              <a href="/realisation">{T.works}</a>
             </li>
             <li>
-              <a href="#collections">{T.about}</a>
+              <a href="/quiSommesNous">{T.about}</a>
             </li>
             <li>
-              <a href="#contact">{T.contact}</a>
+              <a href="/contact">{T.contact}</a>
             </li>
           </ul>
         </nav>
 
-        {/* Gouttière séparatrice */}
+        {/* Gouttière */}
         <div className={styles.gutter} aria-hidden="true" />
 
-        {/* Col droite : contact + mini galerie */}
+        {/* Contact */}
         <div className={styles.contactCol}>
           <h3 className={styles.navTitle}>{T.contactTitle}</h3>
           <address className={styles.addr}>
@@ -129,13 +158,13 @@ export default function FooterSection() {
         <p>{T.rights(new Date().getFullYear())}</p>
         <ul className={styles.legalLinks}>
           <li>
-            <a href="#">{T.legalMentions}</a>
+            <a href="/mentions-legales">{T.legalMentions}</a>
           </li>
           <li>
-            <a href="#">{T.privacy}</a>
+            <a href="/politique-de-confidentialite">{T.privacy}</a>
           </li>
           <li>
-            <a href="#">{T.cookies}</a>
+            <a href="/cookies">{T.cookies}</a>
           </li>
         </ul>
       </div>
