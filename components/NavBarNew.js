@@ -292,14 +292,6 @@ export default function NavBar() {
               <Link href="/servicesPlacard" legacyBehavior>
                 <a onClick={() => setOpen(false)}>{L.servicesCloset}</a>
               </Link>
-              <a
-                href={EXTERNAL_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-              >
-                {L.servicesRenovation}
-              </a>
             </div>
           )}
 
@@ -320,17 +312,6 @@ export default function NavBar() {
               <User size={18} strokeWidth={1.5} />
             </a>
           </Link>
-
-          <a
-            href={EXTERNAL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.mobileExternalBtn}
-            onClick={() => setOpen(false)}
-          >
-            <ExternalLink size={16} strokeWidth={1.8} />
-            <span>{L.outBtn}</span>
-          </a>
         </div>
       </div>
     </>
