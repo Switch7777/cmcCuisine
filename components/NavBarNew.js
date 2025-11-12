@@ -292,6 +292,9 @@ export default function NavBar() {
               <Link href="/servicesPlacard" legacyBehavior>
                 <a onClick={() => setOpen(false)}>{L.servicesCloset}</a>
               </Link>
+              <Link href={EXTERNAL_URL} legacyBehavior>
+                <a onClick={() => setOpen(false)}>{L.servicesRenovation}</a>
+              </Link>
             </div>
           )}
 
