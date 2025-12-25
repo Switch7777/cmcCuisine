@@ -17,7 +17,7 @@ const NAV_LABELS = {
     servicesCloset: "Placard",
     servicesRenovation: "Rénovation",
     works: "Nos réalisations",
-    aboutUs: "Qui sommes-nous",
+    aboutUs: "Qui sommes-nous ?",
     cta: "Demandez un rendez-vous",
     outBtn: "CMC Habitat",
     navLabel: "Navigation principale",

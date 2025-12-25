@@ -56,7 +56,7 @@ export default function ServicesPlacardCat() {
       <div className={styles.hero}>
         <Image
           src="/banner/cuisine.jpg"
-          alt="Bannière collections cuisines CMC"
+          alt="Bannière collections placards CMC"
           layout="fill"
           objectFit="cover"
           priority
@@ -74,7 +74,7 @@ export default function ServicesPlacardCat() {
       {/* --- Contenu --- */}
       <div className={styles.inner}>
         <div className={styles.header}>
-          <p className={styles.kicker}>Nos cuisines</p>
+          <p className={styles.kicker}>Nos placards</p>
           <h2 className={styles.title}>Découvrez nos collections</h2>
           <p className={styles.subtitle}>
             Des lignes modernes, des matériaux premium et des finitions soignées

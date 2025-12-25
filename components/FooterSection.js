@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/FooterSection.module.css";
 import { useLang } from "../context/LangContext";
 
@@ -119,16 +120,16 @@ export default function FooterSection() {
           <h3 className={styles.navTitle}>{T.navTitle}</h3>
           <ul className={styles.navList}>
             <li>
-              <a href="/">{T.home}</a>
+              <Link href="/">{T.home}</Link>
             </li>
             <li>
-              <a href="/realisation">{T.works}</a>
+              <Link href="/realisation">{T.works}</Link>
             </li>
             <li>
-              <a href="/quiSommesNous">{T.about}</a>
+              <Link href="/quiSommesNous">{T.about}</Link>
             </li>
             <li>
-              <a href="/contact">{T.contact}</a>
+              <Link href="/contact">{T.contact}</Link>
             </li>
           </ul>
         </nav>
@@ -158,13 +159,13 @@ export default function FooterSection() {
         <p>{T.rights(new Date().getFullYear())}</p>
         <ul className={styles.legalLinks}>
           <li>
-            <a href="/mentions-legales">{T.legalMentions}</a>
+            <Link href="/mentions-legales">{T.legalMentions}</Link>
           </li>
           <li>
-            <a href="/politique-de-confidentialite">{T.privacy}</a>
+            <Link href="/politique-de-confidentialite">{T.privacy}</Link>
           </li>
           <li>
-            <a href="/cookies">{T.cookies}</a>
+            <Link href="/cookies">{T.cookies}</Link>
           </li>
         </ul>
       </div>
