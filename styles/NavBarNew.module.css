@@ -187,6 +187,16 @@
   z-index: 200;
 }
 
+/* Pont invisible pour ne pas perdre le hover entre le bouton et le menu */
+.submenu::before {
+  content: "";
+  position: absolute;
+  top: -15px; 
+  left: 0;
+  right: 0;
+  height: 15px;
+}
+
 .dropdown:hover .submenu,
 .dropdown:focus-within .submenu {
   opacity: 1;
