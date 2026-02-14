@@ -7,46 +7,7 @@ const COLLECTIONS = [
     title: "COLLECTION VERSO",
     img: "/collections/placard/collection-1.jpg",
   },
-  {
-    slug: "delta",
-    title: "COLLECTION DELTA",
-    img: "/collections/placard/collection-2.jpg",
-  },
-  {
-    slug: "kyoto",
-    title: "COLLECTION KYOTO",
-    img: "/collections/placard/collection-3.jpg",
-  },
-  {
-    slug: "oslo",
-    title: "COLLECTION OSLO",
-    img: "/collections/placard/collection-4.jpg",
-  },
-  {
-    slug: "linea",
-    title: "COLLECTION LINEA",
-    img: "/collections/placard/collection-5.jpg",
-  },
-  {
-    slug: "urban",
-    title: "COLLECTION URBAN",
-    img: "/collections/placard/collection-6.jpg",
-  },
-  {
-    slug: "natura",
-    title: "COLLECTION NATURA",
-    img: "/collections/placard/collection-7.jpg",
-  },
-  {
-    slug: "soho",
-    title: "COLLECTION SOHO",
-    img: "/collections/placard/collection-8.jpg",
-  },
-  {
-    slug: "roma",
-    title: "COLLECTION ROMA",
-    img: "/collections/placard/collection-9.jpg",
-  },
+  
 ];
 
 export default function ServicesPlacardCat() {
@@ -74,7 +35,7 @@ export default function ServicesPlacardCat() {
       {/* --- Contenu --- */}
       <div className={styles.inner}>
         <div className={styles.header}>
-          <p className={styles.kicker}>Nos placards</p>
+  
           <h2 className={styles.title}>Découvrez nos collections</h2>
           <p className={styles.subtitle}>
             Des lignes modernes, des matériaux premium et des finitions soignées

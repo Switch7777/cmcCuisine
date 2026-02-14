@@ -26,6 +26,7 @@ export default function ContactSection() {
       button: "Demander un rendez-vous",
       success: "Message envoyé.",
       error: "Erreur d’envoi.",
+      days : " Lun-Ven",
       hours: "Horaires",
       mapNote: "Parking visiteurs disponible.",
       openInMaps: "Ouvrir dans Google Maps",
@@ -48,6 +49,7 @@ export default function ContactSection() {
       button: "Request a meeting",
       success: "Message sent.",
       error: "Sending failed.",
+      days : " Mon-Fri",
       hours: "Opening hours",
       mapNote: "Visitor parking available.",
       openInMaps: "Open in Google Maps",
@@ -105,7 +107,7 @@ export default function ContactSection() {
       {/* ===== CONTENU ===== */}
       <div className={styles.wrap}>
         {/* Infos */}
-        <div className={styles.card}>
+        <div className={`${styles.card} ${styles.infoCard}`}>
           <h2 className={styles.h2}>{T.contactTitle}</h2>
           <address className={styles.addr}>
             MARINA BURO, 1752 RN 7 Bât A
@@ -120,14 +122,14 @@ export default function ContactSection() {
           </p>
           <div className={styles.hours}>
             <h3>{T.hours}</h3>
-            <ul>
-              <li>Lun–Ven : 9h00–12h00 / 14h00–18h00</li>
-            </ul>
+            <p className={styles.hoursText}>
+              {T.days} : 9h00–12h00 / 14h00–18h00
+            </p>
           </div>
         </div>
 
         {/* Formulaire */}
-        <form className={styles.card} onSubmit={onSubmit}>
+        <form className={`${styles.card} ${styles.formCard}`} onSubmit={onSubmit}>
           <h2 className={styles.h2}>{T.formTitle}</h2>
 
           <div className={styles.row2}>
@@ -187,7 +189,7 @@ export default function ContactSection() {
         </form>
 
         {/* Map */}
-        <div className={styles.card}>
+        <div className={`${styles.card} ${styles.mapCard}`}>
           <h2 className={styles.h2}>Google Maps</h2>
           <div className={styles.mapWrap}>
             <iframe
@@ -198,7 +200,7 @@ export default function ContactSection() {
             />
           </div>
           <p className={styles.mapNote}>
-            {T.mapNote}{" "}
+            {T.mapNote} <br /><br />
             <a href="https://goo.gl/maps" target="_blank" rel="noreferrer">
               {T.openInMaps}
             </a>

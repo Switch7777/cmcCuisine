@@ -31,7 +31,7 @@ function MiddleBottomMain() {
 
             <Link href="/about" legacyBehavior>
               <a className={styles.button}>
-                {lang === "fr" ? "Prendre rendez-vous" : "Book an appointment"}
+                {lang === "fr" ? "Demander un rendez-vous" : "Book an appointment"}
               </a>
             </Link>
           </div>

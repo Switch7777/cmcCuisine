@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/NavBarNew.module.css";
-import { User, ExternalLink } from "lucide-react";
+import { User} from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
 import { useLang } from "../context/LangContext";
 
@@ -13,8 +13,8 @@ const NAV_LABELS = {
     home: "Accueil",
     services: "Nos services",
     servicesKitchen: "Cuisines",
-    servicesBathroom: "Salle de bain",
-    servicesCloset: "Placard",
+    servicesBathroom: "Salle de bains",
+    servicesCloset: "Placards",
     servicesRenovation: "Rénovation",
     works: "Nos réalisations",
     aboutUs: "Qui sommes-nous ?",

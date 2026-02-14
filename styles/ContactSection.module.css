@@ -1,5 +1,7 @@
 .section {
   background: #f9f5f2;
+  flex: 1;
+  width: 100%;
 }
 
 /* ===== BANNIÈRE ===== */
@@ -67,6 +69,13 @@
   backdrop-filter: blur(4px);
 }
 
+.mapCard,
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 .h2 {
   font-size: 1rem;
   text-transform: uppercase;
@@ -95,8 +104,7 @@
   margin-bottom: 4px;
   color: rgba(0, 0, 0, 0.7);
 }
-.hours ul {
-  padding-left: 16px;
+.hoursText {
   margin: 0;
   color: rgba(0, 0, 0, 0.7);
   font-size: 0.85rem;
@@ -107,6 +115,15 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.formCard .h2 {
+  text-align: center;
+}
+
+.formCard .button {
+  margin: 15px auto 0;
+  display: block;
 }
 
 .row2 {
@@ -194,6 +211,7 @@
 .mapNote {
   font-size: 0.85rem;
   color: rgba(0, 0, 0, 0.7);
+  text-align: center;
 }
 .mapNote a {
   color: rgba(0, 0, 0, 0.85);

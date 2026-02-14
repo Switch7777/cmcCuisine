@@ -38,7 +38,7 @@ export default function HeaderHero() {
   const [bgIndex, setBgIndex] = useState(0);
   const timerRef = useRef(null);
 
-  // NEW 👉 pour masquer la flèche quand on scrolle
+  
   const [showArrow, setShowArrow] = useState(true);
 
   // précharge
@@ -74,11 +74,11 @@ export default function HeaderHero() {
     };
   }, []);
 
-  // NEW 👉 écoute du scroll pour cacher la flèche
+
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY || window.pageYOffset || 0;
-      // si on descend un peu, on cache
+    
       if (y > 40) {
         setShowArrow(false);
       } else {
@@ -93,7 +93,7 @@ export default function HeaderHero() {
 
   return (
     <div className={styles.hero} style={{ "--fade-ms": `${FADE_MS}ms` }}>
-      {/* Images superposées */}
+      
       {BACKGROUNDS.map((src, i) => (
         <div
           key={src}

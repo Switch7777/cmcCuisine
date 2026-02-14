@@ -18,7 +18,7 @@ const CARDS = {
       alt: "Salle de bains design",
     },
     {
-      label: "PlacarD",
+      label: "PlacarDS",
       href: "/servicesPlacard",
       img: "/services/placard.jpg",
       alt: "Placard et dressing",

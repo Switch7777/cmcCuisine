@@ -14,12 +14,11 @@ export default function ContactPage() {
         />
       </Head>
 
-      {/* Variante: <Navbar /> ou <Navbar variant="solid" /> selon ton implémentation */}
-      <Navbar />
-
-      <ContactSection />
-
-      <FooterSection />
+      <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+        <Navbar />
+        <ContactSection />
+        <FooterSection />
+      </div>
     </>
   );
 }
