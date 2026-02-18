@@ -8,7 +8,7 @@ export default function FooterSection() {
 
   const T = {
     fr: {
-      baseline: "Conception & pose de cuisines sur-mesure depuis 1975.",
+      baseline: "Conception & Pose de cuisines sur-mesure depuis 1975.",
       navAria: "Navigation de pied de page",
       navTitle: "Navigation",
       home: "Accueil",

@@ -16,7 +16,7 @@ import { useLang } from "../context/LangContext";
 const COLLECTIONS = [
   {
     slug: "amelie-susann",
-    title: "COLLECTION AMELIE | SUSANN",
+    title: "BURGER COLLECTION AMELIE | SUSANN",
     img: "/collectionsCuisines/amelie_susann/amelie_susann_1.webp",
     description: {
       fr: "Confort jusque dans les moindres détails. Tablettes escamotables et rambardes judicieuses – ce sont ces bonnes idées qui font la différence.",
@@ -375,7 +375,7 @@ const COLLECTIONS = [
   },
   {
     slug: "etro",
-    title: "COLLECTION ETRO",
+    title: "ARMONY COLLECTION ETRO",
     img: "/collectionsCuisines/etro/PORTRAIT 20_ETRO(1).jpg",
     description: {
       fr: "Le style traditionnel qui caractérise la porte à châssis est réinventé et enrichi par des coupes géométriques bien définies et par une versatilité exprimée par une vaste modularité. Une composition qui réinterprète en style contemporain certains des éléments plus traditionnels de la cuisine.",
@@ -625,7 +625,7 @@ const COLLECTIONS = [
 const TRANSLATIONS = {
   fr: {
     heroTitle: "Nos collections de cuisines",
-    heroDesc: "Design, élégance et savoir-faire, découvrez l’univers CMC à travers nos collections.",
+    heroDesc: "Design, élégance et savoir-faire, découvrez l’univers de CMC à travers nos collections.",
     title: "Découvrez nos collections",
     subtitle: "Des lignes modernes, des matériaux premium et des finitions soignées pour chaque projet.",
   },

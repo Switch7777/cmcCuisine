@@ -4,7 +4,7 @@ import styles from "../styles/ServicesPlacardCat.module.css";
 const COLLECTIONS = [
   {
     slug: "verso",
-    title: "COLLECTION VERSO",
+    title: "",
     img: "/collections/placard/collection-1.jpg",
   },
   

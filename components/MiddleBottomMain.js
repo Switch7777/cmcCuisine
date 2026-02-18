@@ -25,7 +25,7 @@ function MiddleBottomMain() {
 
             <p className={styles.subtitle}>
               {lang === "fr"
-                ? "Depuis 50 ans, le Centre Méditerranéen de la Cuisine met son savoir-faire au service des professionnels et des particuliers pour les accompagner dans la conception de cuisines sur mesure."
+                ? "Depuis 50 ans, le Centre Méditerranéen de la Cuisine met son savoir-faire au service des professionnels et des particuliers pour les accompagner dans la conception de cuisines sur-mesure."
                 : "For 50 years, the Mediterranean Kitchen Center has put its expertise at the service of professionals and individuals, helping them design custom-made kitchens."}
             </p>
 

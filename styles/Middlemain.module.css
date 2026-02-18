@@ -1,6 +1,6 @@
 .section {
   background: #f9f5f2;
-  padding: clamp(32px, 7vh, 72px) clamp(16px, 6vw, 80px);
+  padding: clamp(25px, 6vh, 72px) clamp(16px, 6vw, 80px);
   text-align: center;
 }
 

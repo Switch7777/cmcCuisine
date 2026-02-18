@@ -37,7 +37,7 @@ export default function ShowroomSection() {
       <div className={styles.right}>
         <div className={styles.rightKicker}>
           {lang === "fr"
-            ? "VOTRE SHOWROOM À VILLENEUVE-LOUBET : CONCEPTION ET INSPIRATION"
+            ? "VOTRE SHOWROOM À VILLENEUVE-LOUBET : INSPIRATION ET CONCEPTION"
             : "YOUR SHOWROOM IN VILLENEUVE-LOUBET: DESIGN AND INSPIRATION"}
         </div>
 

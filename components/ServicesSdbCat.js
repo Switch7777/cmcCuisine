@@ -606,7 +606,7 @@ const COLLECTIONS = [
 const TRANSLATIONS = {
   fr: {
     heroTitle: "Nos collections de salle de bains",
-    heroDesc: "Design, élégance et savoir-faire , découvrez l’univers CMC à travers nos collections.",
+    heroDesc: "Design, élégance et savoir-faire , découvrez l’univers de CMC à travers nos collections.",
     title: "Découvrez nos collections",
     subtitle: "Des lignes modernes, des matériaux premium et des finitions soignées pour chaque projet.",
     dimensions: "DIMENSIONS",

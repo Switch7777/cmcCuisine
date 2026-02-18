@@ -28,7 +28,7 @@ const BACKGROUNDS = [
   "/background-2.jpg",
   "/background3.png",
 ];
-const SLIDE_INTERVAL_MS = 4000;
+const SLIDE_INTERVAL_MS = 4500;
 const FADE_MS = 1400;
 
 export default function HeaderHero() {
