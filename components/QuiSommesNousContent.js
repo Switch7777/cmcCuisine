@@ -74,8 +74,8 @@ const INSTALLER_COMMENTS = [
 const HISTORY = [
   {
     key: "h1",
-    fr: "Fondée en 1975, l'entreprise CMC Cuisine s'est imposée sur la Côte d'Azur comme un acteur majeur de l'aménagement intérieur, en particulier pour les cuisines, salles de bain, dressings et placards – tant pour les particuliers que pour les professionnels et promoteurs. Installée sur le technopôle de la Marina Buro à Villeneuve-Loubet, elle a su allier tradition et innovation : un savoir-faire artisanal couplé à des technologies modernes, pour proposer des espaces à la fois fonctionnels, élégants et adaptés aux modes de vie d'aujourd'hui. Au fil des décennies, CMC Cuisine a développé une approche globale : de la conception personnalisée à la livraison clé en main, incluant le mobilier, l'électroménager, les équipements PMR et la rénovation tous corps d'état. Cette richesse de services lui permet d'accompagner sa clientèle dans des projets variés — de la cuisine de rêve à la rénovation complète d'un espace de vie. Fidèle à sa région, l'entreprise valorise les échanges de proximité : un accueil en showroom pour découvrir les styles, un accompagnement sur mesure, et des équipes terrain capables d'intervenir aussi bien chez des particuliers que dans des programmes de promotion immobilière. Ainsi, CMC Cuisine incarne une histoire d'excellence locale, de passion pour l'aménagement d'intérieur et de confiance établie depuis près de cinquante ans.",
-    en: "Founded in 1975, CMC Cuisine has established itself on the French Riviera as a leading specialist in interior design — particularly kitchens, bathrooms, wardrobes, and closets — serving both private clients and real estate developers. Based in the Marina Buro technopark in Villeneuve-Loubet, the company has successfully combined tradition and innovation: artisanal expertise paired with modern technologies to create spaces that are functional, elegant, and perfectly suited to contemporary lifestyles. Over the decades, CMC Cuisine has developed a comprehensive approach — from personalized design to turnkey delivery — including furniture, appliances, accessibility equipment, and full renovation services. This broad expertise allows the company to support its clients through a wide range of projects, from dream kitchens to complete home renovations. Deeply rooted in its region, the company values close relationships: a welcoming showroom to explore styles, tailor-made guidance, and field teams capable of working with both private clients and property developers. Thus, CMC Cuisine embodies a story of local excellence, a passion for interior design, and nearly fifty years of established trust.",
+    fr: "Fondée en 1975, l'entreprise CMC Cuisine s'est imposée sur la Côte d'Azur comme un acteur majeur de l'aménagement intérieur, en particulier pour les cuisines, salles de bains, dressings et placards tant pour les particuliers que pour les professionnels et promoteurs. Installée sur le technopôle de la Marina Buro à Villeneuve-Loubet, elle a su allier tradition et innovation : un savoir-faire artisanal couplé à des technologies modernes, pour proposer des espaces à la fois fonctionnels, élégants et adaptés aux modes de vie d'aujourd'hui. Au fil des décennies, CMC Cuisine a développé une approche globale : de la conception personnalisée à la livraison clé en main, incluant le mobilier, l'électroménager, les équipements PMR et la rénovation tous corps d'état. Cette richesse de services lui permet d'accompagner sa clientèle dans des projets variés de la cuisine de rêve à la rénovation complète d'un espace de vie. Fidèle à sa région, l'entreprise valorise les échanges de proximité : un accueil en showroom pour découvrir les styles, un accompagnement sur mesure, et des équipes terrain capables d'intervenir aussi bien chez des particuliers que dans des programmes de promotion immobilière. Ainsi, CMC Cuisine incarne une histoire d'excellence locale, de passion pour l'aménagement d'intérieur et de confiance établie depuis près de cinquante ans.",
+    en: "Founded in 1975, CMC Cuisine has established itself on the French Riviera as a major player in interior design, particularly for kitchens, bathrooms, walk-in closets, and built-in wardrobes catering to private individuals as well as professionals and real estate developers. Located in the Marina Buro technology park in Villeneuve-Loubet, the company has successfully combined tradition and innovation: artisanal craftsmanship paired with modern technologies to offer spaces that are functional, elegant, and suited to today's lifestyles. Over the decades, CMC Cuisine has developed a comprehensive approach: from custom design to turnkey delivery, including furniture, appliances, accessibility equipment (PRM), and full-service general contracting for renovations. This wealth of services enables the company to support its clients through a variety of projects from a dream kitchen to the complete renovation of a living space. Loyal to its region, the company values close, local relationships: welcoming clients in a showroom to explore different styles, providing tailored guidance, and deploying field teams capable of operating in both private homes and real estate development projects. Thus, CMC Cuisine embodies a history of local excellence, a passion for interior design, and a foundation of trust established over nearly fifty years.",
   },
 ];
 
@@ -114,6 +114,7 @@ export default function SavoirFaireSection() {
             objectFit="cover"
             priority
           />
+          <div className={styles.imageOverlay} />
         </div>
 
         <div className={styles.comments}>
@@ -145,6 +146,7 @@ export default function SavoirFaireSection() {
                   objectFit="cover"
                   className={styles.photo}
                 />
+                <div className={styles.imageOverlay} />
               </div>
               <p className={styles.name}>
                 {lang === "fr" ? member.fr : member.en}
@@ -167,6 +169,7 @@ export default function SavoirFaireSection() {
             layout="fill"
             objectFit="cover"
           />
+          <div className={styles.imageOverlay} />
         </div>
 
         <div className={styles.comments}>

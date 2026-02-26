@@ -10,6 +10,14 @@
 .left {
   display: flex;
   flex-direction: column;
+  min-height: 100%; /* S'assure de prendre toute la hauteur de la grille */
+}
+
+.leftContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .kicker {
@@ -27,18 +35,22 @@
   font-size: clamp(28px, 5vw, 64px);
   line-height: 1.08;
   margin: 0 0 clamp(16px, 2vw, 24px);
+  text-align: center;
 }
 
 .lead {
   font-size: clamp(15px, 1.25vw, 18px);
   color: rgba(0, 0, 0, 0.78);
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .body {
   color: rgba(0, 0, 0, 0.7);
   line-height: 1.7;
   max-width: 60ch;
+  text-align: center;
+  margin-inline: auto;
 }
 
 /* ---- séparateur ---- */
@@ -58,9 +70,17 @@
 /* ---- droite ---- */
 .right {
   position: relative;
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex; /* Passage en flex pour mieux gérer le centrage vertical interne */
+  flex-direction: column;
   gap: clamp(8px, 1.2vw, 14px);
+}
+
+.rightImages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: inherit;
 }
 
 .rightKicker {
@@ -97,13 +117,13 @@
 /* next/image inside */
 .hero :global(img),
 .thumb :global(img) {
-  filter: grayscale(100%) brightness(85%) saturate(0.8);
+  filter: brightness(85%) saturate(0.8);
   transition: filter 0.6s ease;
 }
 
 .hero:hover :global(img),
 .thumb:hover :global(img) {
-  filter: grayscale(20%) brightness(100%) saturate(1.1);
+  filter: brightness(100%) saturate(1.1);
 }
 
 /* ====== RESPONSIVE ====== */

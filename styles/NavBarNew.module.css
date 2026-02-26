@@ -260,9 +260,16 @@
   gap: 16px;
 }
 
-.profileLink {
+.constructionLink {
   display: inline-flex;
   align-items: center;
+  color: #d4af37; /* Gold tone matches the new page */
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.constructionLink:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
 }
 
 .vDivider {

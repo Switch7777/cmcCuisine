@@ -26,7 +26,7 @@ import styles from "../styles/ServicesSdbCat.module.css";
 const COLLECTIONS = [
   {
     slug: "verso",
-    title: "COLLECTION VERSO",
+    title: "VERSO",
     img: "/sdb/verso.webp",
     description: {
       fr: "Découvrez notre nouvelle collection Verso, conçue pour maximiser le rangement avec un tiroir innovant d’une hauteur supérieure à la norme. Dotés d’une palette de couleurs moderne et polyvalente, ces meubles allient fonctionnalité et style pour s’adapter à tous les espaces.",
@@ -59,7 +59,7 @@ const COLLECTIONS = [
   },
   {
     slug: "delta",
-    title: "COLLECTION DELTA",
+    title: "DELTA",
     img: "/sdb/delta.webp",
     description: {
       fr: "Delta est une collection modulaire et personnalisable distinguée par sa polyvalence et son design.",
@@ -96,7 +96,7 @@ const COLLECTIONS = [
   },
   {
     slug: "kyoto",  
-    title: "COLLECTION KYOTO",
+    title: "KYOTO",
     img: "/sdb/kyoto.webp",
     description: {
       fr: "Finitions tendances, design chaleureux et élégant.",
@@ -133,7 +133,7 @@ const COLLECTIONS = [
   },
   {
     slug: "granada",
-    title: "COLLECTION GRANADA",
+    title: "GRANADA",
     img: "/sdb/granada.webp",
     description: {
       fr: "Combinaison de poignées et de meubles pour créer la salle de bain que vous souhaitez.",
@@ -171,7 +171,7 @@ const COLLECTIONS = [
   },
   {
     slug: "aqua",
-    title: "COLLECTION AQUA",
+    title: "AQUA",
     img: "/sdb/aqua.webp",
     description: {
       fr: "La série Aqua présente un mobilier de salle de bains moderne avec une combinaison de couleurs très actuelle. La simplicité et l’élégance sont deux des éléments qui donneront du caractère à votre salle de bains.",
@@ -209,7 +209,7 @@ const COLLECTIONS = [
   },
   {
     slug: "box",  
-    title: "COLLECTION BOX",
+    title: "BOX",
     img: "/sdb/box.webp",
     description: {
       fr: "Meubles qui s'adaptent facilement à tous les goûts et à tous les espaces.",
@@ -246,7 +246,7 @@ const COLLECTIONS = [
   },
   {
     slug: "indico",
-    title: "COLLECTION INDICO",
+    title: "INDICO",
     img: "/sdb/indico.webp",
     description: {
       fr: "Découvrez notre collection Bondi où vous pouvez choisir entre différentes finitions pour le mobilier et pour les façades. Sans aucun doute, une série qui conviendra parfaitement à votre style.",
@@ -283,7 +283,7 @@ const COLLECTIONS = [
   },
   {
     slug: "eleven",
-    title: "COLLECTION ELEVEN",
+    title: "ELEVEN",
     img: "/sdb/eleven.webp",
     description: {
       fr: "La nouvelle collection Eleven présente un meuble contemporain qui s’adaptera parfaitement à tous les styles. Il dispose d’une gamme de finitions très actuelles et tendances.",
@@ -321,7 +321,7 @@ const COLLECTIONS = [
   },
   {
     slug: "nomad",
-    title: "COLLECTION NOMAD",
+    title: "NOMAD",
     img: "/sdb/nomad.webp",
     description: {
       fr: "Concevez la structure de l'espace qui vous convient.",
@@ -358,7 +358,7 @@ const COLLECTIONS = [
   },
   {
     slug: "icon",
-    title: "COLLECTION ICON",
+    title: "ICON",
     img: "/sdb/icon.webp",
     description: {
       fr: "Style à la fois élégant et décontracté, tiroirs à grande capacité et détails précis.",
@@ -391,7 +391,7 @@ const COLLECTIONS = [
   },  
   {
     slug: "arco",
-    title: "COLLECTION ARCO",
+    title: "ARCO",
     img: "/sdb/arco.webp",
     description: {
       fr: "Solutions pour que votre salle de bain intègre des détails en bois, fruit de notre passion pour la nature.",
@@ -425,7 +425,7 @@ const COLLECTIONS = [
     images: ["/collections/arco/Arco_new_1.webp","/collections/arco/Arco_new_2.webp","/collections/arco/Arco_new_3.webp","/collections/arco/Arco_new_4.webp","/collections/arco/Arco_new_5.webp"]
   }, {
     slug: "bari",
-    title: "COLLECTION BARI",
+    title: "BARI",
     img: "/sdb/bari.webp",
     description: {
       fr: "Union du design et de l’organisation pour mieux répondre à votre espace.",
@@ -457,7 +457,7 @@ const COLLECTIONS = [
     images: ["/collections/bari/Bari_new_1.webp","/collections/bari/Bari_new_2.webp","/collections/bari/Bari_new_3.webp","/collections/bari/Bari_new_4.webp","/collections/bari/Bari_new_5.webp"]
   }, {
     slug: "vision",
-    title: "COLLECTION VISION",
+    title: "VISION",
     img: "/sdb/vision.webp",
     description: {
       fr: "Vision s'intègre parfaitement à tout autre meuble dans votre salle de bain.",
@@ -487,7 +487,7 @@ const COLLECTIONS = [
     images: ["/collections/vision/vision-new-1.webp","/collections/vision/vision-new-2.webp","/collections/vision/vision-new-3.webp","/collections/vision/vision-new-4.webp","/collections/vision/vision-new-5.webp","/collections/vision/vision-new-6.webp"]
   }, {
     slug: "midi",
-    title: "COLLECTION MIDI",
+    title: "MIDI",
     img: "/sdb/midi.webp",
     description: {
       fr: "Midi est une collection idéale pour les petits espaces. Petite mais avec beaucoup de capacité.",
@@ -525,7 +525,7 @@ const COLLECTIONS = [
     images: ["/collections/midi/Midi_new_1.webp","/collections/midi/Midi_new_2.webp","/collections/midi/Midi_new_3.webp","/collections/midi/Midi_new_4.webp","/collections/midi/Midi_new_5.webp","/collections/midi/Midi_new_6.webp","/collections/midi/Midi_new_7.webp"]
   }, {
     slug: "lagos",
-    title: "COLLECTION LAGOS",
+    title: "LAGOS",
     img: "/sdb/lagos.webp",
     description: {
       fr: "Conçu pour tirer le meilleur parti des petits espaces.",
@@ -553,7 +553,7 @@ const COLLECTIONS = [
     images: ["/collections/lagos/Lagos_new_1.webp","/collections/lagos/Lagos_new_2.webp","/collections/lagos/Lagos_new_3.webp","/collections/lagos/Lagos_new_4.webp","/collections/lagos/Lagos_new_5.webp","/collections/lagos/Lagos_new_6.webp","/collections/lagos/Lagos_new_7.webp","/collections/lagos/Lagos_new_8.webp","/collections/lagos/Lagos_new_9.webp","/collections/lagos/Lagos_new_10.webp","/collections/lagos/Lagos_new_11.webp","/collections/lagos/Lagos_new_12.webp"]
   },{
     slug: "quadro",
-    title: "COLLECTION QUADRO",
+    title: "QUADRO",
     img: "/sdb/quadro.webp",
     description: {
       fr: "Quadro est une collection très polyvalente, avec un style moderne et minimaliste. C'est un meuble avec une structure métallique et ouverte, donc il vous aidera à nettoyer facilement et rendra votre salle de bains plus spacieuse.",
@@ -577,7 +577,7 @@ const COLLECTIONS = [
     images: ["/collections/quadro/Quadro_new_1.webp","/collections/quadro/Quadro_new_2.webp","/collections/quadro/Quadro_new_3.webp","/collections/quadro/Quadro_new_4.webp"]
   },{
     slug: "loft",
-    title: "COLLECTION Loft",
+    title: "LOFT",
     img: "/sdb/loft.webp",
     description: {
       fr: "Conçu pour tirer le meilleur parti des petits espaces.",
@@ -606,9 +606,9 @@ const COLLECTIONS = [
 const TRANSLATIONS = {
   fr: {
     heroTitle: "Nos collections de salle de bains",
-    heroDesc: "Design, élégance et savoir-faire , découvrez l’univers de CMC à travers nos collections.",
+    heroDesc: "Explorez l'excellence du design signé CMC.",
     title: "Découvrez nos collections",
-    subtitle: "Des lignes modernes, des matériaux premium et des finitions soignées pour chaque projet.",
+    subtitle: "Plongez dans l'univers CMC et découvrez une vision singulière de la salle de bains contemporaine.",
     dimensions: "DIMENSIONS",
     finishes: "FINITIONS",
     width: "Largeur (cm)",
@@ -617,9 +617,9 @@ const TRANSLATIONS = {
   },
   en: {
     heroTitle: "Our Bathroom Collections",
-    heroDesc: "Design, elegance and craftsmanship, discover the CMC universe through our collections.",
+    heroDesc: "Explore the excellence of CMC design.",
     title: "Discover our collections",
-    subtitle: "Modern lines, premium materials and neat finishes for every project.",
+    subtitle: "Dive into the CMC universe and discover a unique vision of the contemporary bathroom.",
     dimensions: "DIMENSIONS",
     finishes: "FINISHES",
     width: "Width (cm)",
@@ -787,7 +787,7 @@ export default function ServicesSdbCat() {
       {/* --- Bandeau top --- */}
       <div className={styles.hero}>
         <Image
-          src="/banner/cuisine.jpg"
+          src="/banner/sdb.jpg"
           alt="Bannière collections cuisines CMC"
           layout="fill"
           objectFit="cover"

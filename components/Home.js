@@ -11,13 +11,11 @@ import ServicesSection from "../components/ServicesSection";
 function Home() {
   return (
     <div>
-    
-      <NavBar variant="transparent" />
+    <NavBar variant="transparent" />
       <HeaderHero />
       <ServicesSection />
       <Middlemain />
       <MiddleBottomMain />
-
       <ShowroomSection />
       <FooterSection />
     </div>

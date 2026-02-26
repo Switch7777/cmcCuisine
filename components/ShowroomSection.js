@@ -12,22 +12,24 @@ export default function ShowroomSection() {
         <div className={styles.kicker}>
           {lang === "fr" ? "LE SHOWROOM" : "THE SHOWROOM"}
         </div>
+        
+        <div className={styles.leftContent}>
+          <h2 className={styles.headline}>
+            {lang === "fr" ? "DÉCOUVREZ NOTRE SHOWROOM" : "DISCOVER OUR SHOWROOM"}
+          </h2>
 
-        <h2 className={styles.headline}>
-          {lang === "fr" ? "DÉCOUVREZ NOTRE SHOWROOM" : "DISCOVER OUR SHOWROOM"}
-        </h2>
+          <p className={styles.lead}>
+            {lang === "fr"
+              ? "Entrez dans notre espace d’exposition, un lieu pensé pour l’inspiration et la découverte de nos collections."
+              : "Step into our exhibition space — a place designed for inspiration and discovery of our collections."}
+          </p>
 
-        <p className={styles.lead}>
-          {lang === "fr"
-            ? "Entrez dans notre espace d’exposition, un lieu pensé pour l’inspiration et la découverte de nos collections."
-            : "Step into our exhibition space — a place designed for inspiration and discovery of our collections."}
-        </p>
-
-        <p className={styles.body}>
-          {lang === "fr"
-            ? "Vous y retrouverez nos modèles emblématiques, nos matériaux nobles ainsi que les dernières tendances en design d’intérieur. Notre équipe vous accueille pour imaginer ensemble la cuisine qui vous ressemble."
-            : "You’ll find our signature models, premium materials, and the latest interior design trends. Our team welcomes you to create together the kitchen that truly reflects your style."}
-        </p>
+          <p className={styles.body}>
+            {lang === "fr"
+              ? "Vous y retrouverez nos modèles emblématiques, nos matériaux nobles ainsi que les dernières tendances en design d’intérieur. Notre équipe vous accueille pour imaginer ensemble la cuisine qui vous ressemble."
+              : "You’ll find our signature models, premium materials, and the latest interior design trends. Our team welcomes you to create together the kitchen that truly reflects your style."}
+          </p>
+        </div>
       </div>
 
       {/* Séparateur */}
@@ -41,30 +43,32 @@ export default function ShowroomSection() {
             : "YOUR SHOWROOM IN VILLENEUVE-LOUBET: DESIGN AND INSPIRATION"}
         </div>
 
-        <figure className={styles.hero}>
-          <Image
-            src="/bureau.png"
-            alt={
-              lang === "fr"
-                ? "Showroom CMC Cuisine à Villeneuve-Loubet"
-                : "CMC Kitchen Showroom in Villeneuve-Loubet"
-            }
-            layout="fill"
-            objectFit="cover"
-            objectPosition="top center"
-            priority
-          />
-        </figure>
+        <div className={styles.rightImages}>
+          <figure className={styles.hero}>
+            <Image
+              src="/bureau.png"
+              alt={
+                lang === "fr"
+                  ? "Showroom CMC Cuisine à Villeneuve-Loubet"
+                  : "CMC Kitchen Showroom in Villeneuve-Loubet"
+              }
+              layout="fill"
+              objectFit="cover"
+              objectPosition="top center"
+              priority
+            />
+          </figure>
 
-        <figure className={styles.thumb}>
-          <Image
-            src="/bureau2.png"
-            alt={lang === "fr" ? "Détail du showroom" : "Showroom detail"}
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-          />
-        </figure>
+          <figure className={styles.thumb}>
+            <Image
+              src="/bureau2.png"
+              alt={lang === "fr" ? "Détail du showroom" : "Showroom detail"}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+            />
+          </figure>
+        </div>
       </div>
     </section>
   );

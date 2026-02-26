@@ -98,16 +98,19 @@
   width: 100%;
   aspect-ratio: 3 / 4;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Effet d'ombre */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px; /* Légère courbure pour adoucir */
 }
 
 .photo {
   transition: transform 0.4s ease, filter 0.4s ease;
-  filter: grayscale(100%);
+  object-fit: cover;
+  object-position: 35%;
 }
 
 .card:hover .photo {
   transform: scale(1.04);
-  filter: grayscale(0);
 }
 
 .name {
@@ -121,7 +124,7 @@
 .installersBlock {
   width: 100%;
   background: #fff;
-  padding: 80px 24px 100px;
+  padding: 40px 24px 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -147,16 +150,17 @@
   overflow: hidden;
   border-radius: 12px;
   margin-bottom: 2.5rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); /* Effet d'ombre plus marqué pour la grande image */
 }
 
 .installersImage img {
-  filter: grayscale(100%);
   transition: transform 0.4s ease, filter 0.4s ease;
+  object-fit: cover;
+  object-position: 35%;
 }
 
 .installersImage:hover img {
   transform: scale(1.04);
-  filter: grayscale(0);
 }
 
 /* === COMMENTAIRES === */
@@ -164,11 +168,11 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  max-width: 700px;
+  max-width: 900px;
   color: rgba(15, 23, 42, 0.75);
   font-size: 1.05rem;
   line-height: 1.7;
-  text-align: left;
+  text-align: center;
 }
 
 .comments p {
@@ -234,4 +238,12 @@
     flex: 0 1 320px;
     max-width: 340px;
   }
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  pointer-events: none;
 }

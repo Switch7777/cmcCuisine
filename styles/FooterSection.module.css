@@ -20,7 +20,20 @@
 .brandCol {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
+  text-align: center;
+  min-height: 100%;
+}
+
+.brandBox,
+.navBox,
+.contactBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .logoBox {
@@ -38,6 +51,7 @@
   max-width: 34ch;
   font-size: 0.9rem;
   line-height: 1.5;
+  text-align: center;
 }
 
 /* ---- Réseaux sociaux ---- */
@@ -88,9 +102,10 @@
 
 /* ---- Col centre : nav ---- */
 .navCol {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 100%;
 }
 .navTitle {
   grid-column: 1 / -1;
@@ -98,7 +113,8 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.4);
-  margin: 0 0 4px;
+  margin: 0;
+  text-align: center; /* Center these titles specifically */
 }
 .navList {
   list-style: none;
@@ -139,7 +155,8 @@
 .contactCol {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
+  min-height: 100%;
 }
 .addr {
   font-style: normal;
@@ -186,37 +203,48 @@
 /* ---- Responsive ---- */
 @media (max-width: 1080px) {
   .wrap {
-    grid-template-columns: 1fr minmax(16px, 30px) 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px 20px;
   }
-  .gutter:nth-of-type(2) {
+  .brandCol {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+  }
+  .gutter {
     display: none;
   }
-  .navCol {
-    grid-column: 3 / 4;
-  }
-  .contactCol {
-    grid-column: 1 / 2;
-    grid-row: 2;
+  .navCol, .contactCol {
+    grid-column: auto;
+    align-items: center; /* Ensure columns themselves are centered */
+    text-align: center;
   }
 }
 
 @media (max-width: 780px) {
   .wrap {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 30px;
+    padding: 40px 20px;
     border-radius: 0;
     box-shadow: none;
   }
   .gutter {
     display: none;
   }
-  .navCol {
-    grid-template-columns: 1fr;
+  .navCol, .contactCol, .brandCol {
+    align-items: center;
+    text-align: center;
   }
   .legalBar {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    padding: 12px 20px;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+  }
+  .legalLinks {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
 }

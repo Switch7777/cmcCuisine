@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/NavBarNew.module.css";
-import { User} from "lucide-react";
+import { User, AlertTriangle } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
 import { useLang } from "../context/LangContext";
 
@@ -183,6 +183,8 @@ export default function NavBar() {
 
         {/* Droite (desktop uniquement) */}
         <div className={styles.rightIcons}>
+          
+          
           <Link href="/login" legacyBehavior>
             <a className={styles.profileLink} aria-label={L.accountAria}>
               <User size={22} strokeWidth={1.6} />
