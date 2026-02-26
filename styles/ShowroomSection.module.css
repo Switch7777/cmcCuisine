@@ -131,7 +131,13 @@
   .section {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+
+  .left, .right {
+    width: 100%;
+    max-width: 100%;
   }
 
   .gutter {
@@ -141,27 +147,39 @@
   .right {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    align-items: center; /* ✅ centre le contenu de la colonne droite */
+    gap: 20px;
+    align-items: center;
   }
 
   .rightKicker {
-    text-align: center; /* ✅ texte centré aussi */
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .rightImages {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
   .hero {
     width: 100%;
-    max-width: 520px; /* ✅ limite la largeur */
+    max-width: 600px;
     aspect-ratio: 16 / 10;
+    margin: 0 auto;
   }
 
   .thumb {
     position: relative;
     right: auto;
     bottom: auto;
-    width: 100%;
-    max-width: 360px; /* ✅ un peu plus petit que la grande */
-    margin: 10px auto 0; /* ✅ centre la vignette */
+    width: 90%;
+    max-width: 400px;
+    margin: -10px auto 0;
+    z-index: 2;
   }
 }
 
