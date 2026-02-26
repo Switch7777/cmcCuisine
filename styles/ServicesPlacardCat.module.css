@@ -505,6 +505,14 @@
     margin-top: 80px;
     margin-bottom: 60px;
   }
+  .featuredContent {
+    text-align: center;
+    align-items: center;
+    padding: 60px 24px;
+  }
+  .storageText {
+    max-width: 100%;
+  }
   .featuredImage {
     height: 400px; /* Force visible height */
     min-height: 400px;
