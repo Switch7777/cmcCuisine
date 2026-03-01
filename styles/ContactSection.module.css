@@ -186,11 +186,15 @@
 .noteOk {
   color: #197b36;
   font-size: 0.9rem;
+  text-align: center;
+  margin: 10px auto 0;
 }
 
 .noteErr {
   color: #b3261e;
   font-size: 0.9rem;
+  text-align: center;
+  margin: 10px auto 0;
 }
 
 /* === Map === */

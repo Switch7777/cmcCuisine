@@ -24,7 +24,7 @@ export default function ContactSection() {
       emailPh: "nom@exemple.com",
       messagePh: "Parlez-nous de votre projet…",
       button: "Demander un rendez-vous",
-      success: "Message envoyé.",
+      success: "Deamnde envoyé.",
       error: "Erreur d’envoi.",
       days : " Lun-Ven",
       hours: "Horaires",
