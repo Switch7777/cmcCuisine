@@ -10,7 +10,7 @@ function MiddleBottomMain() {
     <section className={styles.main}>
       <div className={styles.banner}>
         <Image
-          src="/background3.png"
+          src="/bannerqui.png"
           alt={lang === "fr" ? "50 ans d'expérience" : "50 years of experience"}
           layout="fill"
           className={styles.bg}
@@ -29,9 +29,9 @@ function MiddleBottomMain() {
                 : "For 50 years, the Mediterranean Kitchen Center has put its expertise at the service of professionals and individuals, helping them design custom-made kitchens."}
             </p>
 
-            <Link href="/about" legacyBehavior>
+            <Link href="/quiSommesNous" legacyBehavior>
               <a className={styles.button}>
-                {lang === "fr" ? "Demander un rendez-vous" : "Book an appointment"}
+                {lang === "fr" ? "Qui sommes  nous ?" : "Who are we?"}
               </a>
             </Link>
           </div>

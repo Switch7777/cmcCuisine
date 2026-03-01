@@ -106,7 +106,7 @@ export default function CookiesPage() {
         <h2>{T.contact}</h2>
         <p>
           {T.contactText}
-          <a href="mailto:contact@cmc-cuisine.com">contact@cmc-cuisine.com</a>
+          <a href="mailto:contact@cmccuisine.com">contact@cmccuisine.com</a>
         </p>
       </main>
 

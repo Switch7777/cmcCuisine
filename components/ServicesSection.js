@@ -8,19 +8,19 @@ const CARDS = {
     {
       label: "Cuisines",
       href: "/servicesCuisine",
-      img: "/services/cuisines.jpg",
+      img: "/banner/cuisine.jpg",
       alt: "Cuisine sur-mesure",
     },
     {
       label: "Salle de bains",
       href: "/servicesSdb",
-      img: "/services/sdb.jpg",
+      img: "/banner/sdb.jpg",
       alt: "Salle de bains design",
     },
     {
       label: "PlacarDS",
       href: "/servicesPlacard",
-      img: "/services/placard.jpg",
+      img: "/banner/dressing.webp",
       alt: "Placard et dressing",
     },
   ],

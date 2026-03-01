@@ -10,7 +10,7 @@ function App({ Component, pageProps }) {
       img.src = "/logoblancmoins.png";
       img.onload = () => {
         const canvas = document.createElement("canvas");
-        const size = 128; // High res for favicon
+        const size = 64; // Standard favicon size
         canvas.width = size;
         canvas.height = size;
         const ctx = canvas.getContext("2d");
@@ -19,17 +19,28 @@ function App({ Component, pageProps }) {
         ctx.fillStyle = "#000000";
         ctx.fillRect(0, 0, size, size);
 
-        // Calculate scaling to ZOOM IN on the main letters
-        // We focus on the width and ignore the tagline at the bottom
-        const scale = (size / img.width) * 1.8; // Increased scale to fill more width
-        const x = (size - img.width * scale) / 2;
-        const y = (size - img.height * scale) / 2 + (size * 0.1); // Slight downward shift to center the big letters
+        // Maintain aspect ratio (contain strategy)
+        const imgAspect = img.width / img.height;
+        let drawWidth, drawHeight;
 
-        ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
+        if (imgAspect > 1) {
+          // Wider than tall
+          drawWidth = size * 0.9; // 90% of width to leave a small margin
+          drawHeight = drawWidth / imgAspect;
+        } else {
+          // Taller than wide (or square)
+          drawHeight = size * 0.9;
+          drawWidth = drawHeight * imgAspect;
+        }
+
+        const x = (size - drawWidth) / 2;
+        const y = (size - drawHeight) / 2;
+
+        ctx.drawImage(img, x, y, drawWidth, drawHeight);
 
         // Update favicon links
-        const faviconLinks = document.querySelectorAll("link[rel*='icon']");
         const dataUrl = canvas.toDataURL("image/png");
+        const faviconLinks = document.querySelectorAll("link[rel*='icon']");
         faviconLinks.forEach(link => {
           link.href = dataUrl;
         });

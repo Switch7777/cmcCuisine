@@ -13,24 +13,17 @@ export default function MentionsLegales() {
       h1: "Mentions légales",
       updated: "Dernière mise à jour",
       editor: "1. Éditeur du site",
-      director: "2. Directeur de la publication",
-      hosting: "3. Hébergement",
-      ip: "4. Propriété intellectuelle",
-      liability: "5. Responsabilité",
+     
+      ip: "2. Propriété intellectuelle",
+      liability: "3. Responsabilité",
       editorContent: (
         <>
-          <strong>CMC Cuisine</strong>
-          <br />
-          MARINA BURO, 1752 RN 7 Bât A
-          <br />
-          06270 Villeneuve-Loubet
-          <br />
-          Téléphone : <a href="tel:+33493201918">04 93 20 19 18</a>
+          <strong>WEB&RIDE Solutions</strong>
           <br />
           E-mail :{" "}
-          <a href="mailto:contact@cmc-cuisine.com">contact@cmc-cuisine.com</a>
+          <a href="mailto:contact@webandride.com">contact@webandride.com</a>
           <br />
-          SIRET : {/* à compléter */}
+          SIRET : 52350278900036
         </>
       ),
       directorContent: "Le directeur de la publication est : à compléter.",
@@ -55,24 +48,17 @@ export default function MentionsLegales() {
       h1: "Legal Notice",
       updated: "Last update",
       editor: "1. Website Publisher",
-      director: "2. Publishing Director",
-      hosting: "3. Hosting",
-      ip: "4. Intellectual Property",
-      liability: "5. Liability",
+     
+      ip: "2. Intellectual Property",
+      liability: "3. Liability",
       editorContent: (
         <>
-          <strong>CMC Cuisine</strong>
+          <strong>WEB&RIDE Solutions</strong>
           <br />
-          MARINA BURO, 1752 RN 7 Bât A
+          E-mail :{" "}
+          <a href="mailto:contact@webandride.com">contact@webandride.com</a>
           <br />
-          06270 Villeneuve-Loubet – France
-          <br />
-          Phone: <a href="tel:+33493201918">+33 4 93 20 19 18</a>
-          <br />
-          Email:{" "}
-          <a href="mailto:contact@cmc-cuisine.com">contact@cmc-cuisine.com</a>
-          <br />
-          Company ID (SIRET): {/* to be completed */}
+          SIRET : 52350278900036
         </>
       ),
       directorContent: "Publishing director: to be completed.",
@@ -128,11 +114,9 @@ export default function MentionsLegales() {
         <h2>{T.editor}</h2>
         <p>{T.editorContent}</p>
 
-        <h2>{T.director}</h2>
-        <p>{T.directorContent}</p>
+        
 
-        <h2>{T.hosting}</h2>
-        <p>{T.hostingContent}</p>
+        
 
         <h2>{T.ip}</h2>
         <p>{T.ipContent}</p>

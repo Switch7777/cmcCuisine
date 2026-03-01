@@ -21,7 +21,7 @@ export default function ShowroomSection() {
           <p className={styles.lead}>
             {lang === "fr"
               ? "Entrez dans notre espace d’exposition, un lieu pensé pour l’inspiration et la découverte de nos collections."
-              : "Step into our exhibition space — a place designed for inspiration and discovery of our collections."}
+              : "Step into our exhibition space, a place designed for inspiration and discovery of our collections."}
           </p>
 
           <p className={styles.body}>
@@ -53,21 +53,13 @@ export default function ShowroomSection() {
                   : "CMC Kitchen Showroom in Villeneuve-Loubet"
               }
               layout="fill"
-              objectFit="cover"
-              objectPosition="top center"
+              objectFit="contain"
+              objectPosition="center"
               priority
             />
           </figure>
 
-          <figure className={styles.thumb}>
-            <Image
-              src="/bureau2.png"
-              alt={lang === "fr" ? "Détail du showroom" : "Showroom detail"}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
-            />
-          </figure>
+          
         </div>
       </div>
     </section>

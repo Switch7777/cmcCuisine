@@ -115,7 +115,7 @@ export default function PolitiqueConfidentialite() {
         <p>{T.rightsText}</p>
         <p>
           {T.contact}
-          <a href="mailto:contact@cmc-cuisine.com">contact@cmc-cuisine.com</a>
+          <a href="mailto:contact@cmccuisine.com">contact@cmccuisine.com</a>
         </p>
       </main>
 

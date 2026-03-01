@@ -17,24 +17,28 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Image d’arrière-plan : N&B + léger zoom au hover */
+/* Image d’arrière-plan : Sépia + léger zoom au hover */
 .bg {
   object-fit: cover;
-  filter: brightness(85%);
-  transition: filter 0.6s ease, transform 1s ease;
-  transform: scale(1.03);
+  object-position: center;
+  filter: sepia(0.6) brightness(75%) contrast(1.1);
+  transition: filter 0.8s ease, transform 1.2s cubic-bezier(0.2, 0, 0.2, 1);
 }
 
 .banner:hover .bg {
-  filter: brightness(100%) saturate(1.1);
-  transform: scale(1.06);
+  filter: sepia(0.8) brightness(100%);
+  transform: scale(1.04);
 }
 
 /* Superposition légère et centrage du contenu */
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,89 +55,87 @@
 
 /* ====== TITRE ====== */
 .title {
-  font-family: "Jost", serif;
-  font-weight: 250;
-  font-size: clamp(1.8rem, 4vw, 3.4rem);
-  letter-spacing: 0.03em;
-  margin-bottom: clamp(0.6rem, 2vw, 1rem);
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  letter-spacing: 0.12em;
+  margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
   text-transform: uppercase;
   color: #ffffff;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* ====== SOUS-TITRE ====== */
 .subtitle {
   font-family: "Jost", sans-serif;
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0 auto clamp(1.2rem, 2vw, 2rem);
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  max-width: 950px;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 auto clamp(1.5rem, 3vw, 2.5rem);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  max-width: 800px;
+  font-weight: 300;
 }
 
-/* ====== BOUTON ====== */
 .button {
   display: inline-block;
-  background-color: #f9f5f2;
-  color: #1b1b1b;
-  border-radius: 999px;
-  padding: 0.9rem 1.6rem;
+  background-color: #ffffff;
+  color: #111;
+  border-radius: 100px;
+  padding: 1.1rem 2.4rem;
   font-family: "Jost", sans-serif;
-  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
   text-decoration: none;
-  letter-spacing: 0.03em;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: 1.5px solid #ffffff;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover {
   background-color: transparent;
-  color: #f9f5f2;
-  border-color: #f9f5f2;
-  transform: translateY(-2px);
+  color: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
   .banner {
-    max-height: 360px;
+    max-height: 420px; /* Un peu moins haut pour moins étirer le contenu */
+    aspect-ratio: auto; /* Laisse le contenu dicter la hauteur si besoin */
+    min-height: 380px;
   }
 
   .overlay {
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.35); /* Un peu plus sombre pour la lisibilité sur petit écran */
+  }
+
+  .content {
+    padding: 2rem 1.2rem;
   }
 
   .title {
-    font-size: clamp(1.4rem, 5vw, 2.2rem);
+    font-size: clamp(1.6rem, 7vw, 2.1rem);
+    letter-spacing: 0.06em;
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
   }
 
   .subtitle {
-    font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0;
+    margin-bottom: 1.8rem;
+    font-weight: 300;
   }
 
   .button {
-    padding: 0.8rem 1.3rem;
+    padding: 0.85rem 1.6rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
   }
-}
-/* ===== BOUTON PRINCIPAL ===== */
-.button {
-  display: inline-block;
-  background-color: #f9f5f2;
-  color: #1b1b1b;
-  border-radius: 999px;
-  padding: 0.9rem 1.6rem;
-  font-family: "Jost", sans-serif;
-  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.button:hover {
-  background-color: transparent;
-  color: #f9f5f2;
-  border-color: #f9f5f2;
-  transform: translateY(-2px);
 }

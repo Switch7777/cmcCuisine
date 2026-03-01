@@ -1,8 +1,8 @@
 .section {
   display: grid;
-  grid-template-columns: 1fr minmax(24px, 40px) 1.2fr;
-  gap: clamp(16px, 3vw, 36px);
-  padding: clamp(20px, 5vw, 64px) clamp(16px, 4vw, 48px);
+  grid-template-columns: 1fr minmax(32px, 50px) 1.2fr;
+  gap: clamp(24px, 4vw, 48px);
+  padding: clamp(60px, 12vw, 120px) clamp(20px, 6vw, 80px);
   background: #ffffff;
 }
 
@@ -10,7 +10,7 @@
 .left {
   display: flex;
   flex-direction: column;
-  min-height: 100%; /* S'assure de prendre toute la hauteur de la grille */
+  min-height: 100%;
 }
 
 .leftContent {
@@ -21,18 +21,31 @@
 }
 
 .kicker {
+  font-family: "Jost", sans-serif;
   font-size: 0.85rem;
-  letter-spacing: 0.18em;
+  font-weight: 600;
+  letter-spacing: 0.3em;
   color: #a5b3ac;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.kicker::after {
+  content: "";
+  height: 1px;
+  width: 40px;
+  background: #a5b3ac;
+  opacity: 0.6;
 }
 
 .headline {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Jost", sans-serif;
   font-weight: 500;
   color: #1e2c35;
-  font-size: clamp(28px, 5vw, 64px);
+  font-size: clamp(24px, 4vw, 48px);
   line-height: 1.08;
   margin: 0 0 clamp(16px, 2vw, 24px);
   text-align: center;
@@ -97,8 +110,8 @@
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  background: #f2f2f2;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  background: transparent;
+  box-shadow: none;
 }
 
 .hero {
@@ -117,13 +130,13 @@
 /* next/image inside */
 .hero :global(img),
 .thumb :global(img) {
-  filter: brightness(85%) saturate(0.8);
+  filter: brightness(85%) sepia(0.5);
   transition: filter 0.6s ease;
 }
 
 .hero:hover :global(img),
 .thumb:hover :global(img) {
-  filter: brightness(100%) saturate(1.1);
+  filter: brightness(100%) sepia(0.1);
 }
 
 /* ====== RESPONSIVE ====== */
