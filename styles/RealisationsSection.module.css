@@ -68,7 +68,7 @@
 
 /* Image : N&B → couleur au hover (cohérence site) */
 .slideImg {
-  filter: grayscale(100%) brightness(88%);
+  
   transition: transform 1s ease, filter 0.6s ease;
   transform: translateZ(0) scale(1.03); /* ✅ boost rendu + évite tearing */
   backface-visibility: hidden;

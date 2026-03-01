@@ -20,30 +20,32 @@ const TEAM = [
     img: "/collaborateurs/thierry.jpg",
     fr: "Thierry Battesti, Directeur technique (Associé)",
     en: "Thierry Battesti, Technical Director (Partner)",
+    objectPosition: "center 5%", 
   },
+
   {
     key: "laurent",
     img: "/collaborateurs/laurent.png",
     fr: "Laurent Bourgain, Directeur d'agence",
     en: "Laurent Bourgain, Branch Director",
+  },{
+    key: "aurelie",
+    img: "/collaborateurs/aurelie.jpg",
+    fr: "Aurélie Lepaulmier, Responsable de programme (Associée)",
+    en: "Aurélie Lepaulmier, Program Director (Partner)",
   },
   {
     key: "laura",
     img: "/laura.jpg",
-    fr: "Laura Poncelet, Assistante administrative",
-    en: "Laura Poncelet, Administrative Assistant",
+    fr: "Laura Poncelet, Assistante de direction",
+    en: "Laura Poncelet, Assistant Director",
   },
-  {
-    key: "aurelie",
-    img: "/collaborateurs/aurelie.jpg",
-    fr: "Aurélie Lepaulmier, Assistante technique",
-    en: "Aurélie Lepaulmier, Technical Assistant",
-  },
+  
   {
     key: "caroline",
     img: "/collaborateurs/caroline.jpg",
-    fr: "Caroline, Conseillère clientèle et Conceptrice",
-    en: "Caroline, Customer Advisor and Designer",
+    fr: "Caroline Ottou, Concepteur",
+    en: "Caroline Ottou, Designer",
   },
   {
     key: "LaurentC",
@@ -99,28 +101,39 @@ export default function SavoirFaireSection() {
       </div>
 
       {/* ===== NOTRE HISTOIRE ===== */}
-      <div className={styles.installersBlock}>
+      <div className={styles.content}>
         <h2 className={styles.installersTitle}>
           {lang === "fr" ? "NOTRE HISTOIRE" : "OUR HISTORY"}
         </h2>
 
-        <div className={styles.installersImage}>
-          <Image
-            src="/history.png"
-            alt={
-              lang === "fr" ? "Histoire de CMC Cuisine" : "CMC Cuisine history"
-            }
-            layout="fill"
-            objectFit="cover"
-            priority
-          />
-          <div className={styles.imageOverlay} />
-        </div>
+        <div className={styles.historyWrapper}>
+          <div className={styles.collageContainer}>
+            <div className={styles.mainPhoto}>
+              <Image
+                src="/staff.png"
+                alt="L'équipe CMC Cuisine"
+                width={1200}
+                height={800}
+                layout="responsive"
+                priority
+              />
+            </div>
+            
+            <div className={styles.secondaryPhoto}>
+              <Image
+                src="/history.png"
+                alt="CMC Cuisine Historique"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          </div>
 
-        <div className={styles.comments}>
-          {HISTORY.map((c) => (
-            <p key={c.key}>{lang === "fr" ? c.fr : c.en}</p>
-          ))}
+          <div className={styles.historyTextSide}>
+            {HISTORY.map((c) => (
+              <p key={c.key}>{lang === "fr" ? c.fr : c.en}</p>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -145,6 +158,7 @@ export default function SavoirFaireSection() {
                   layout="fill"
                   objectFit="cover"
                   className={styles.photo}
+                  objectPosition={member.objectPosition || "35%"}
                 />
                 <div className={styles.imageOverlay} />
               </div>
@@ -157,25 +171,27 @@ export default function SavoirFaireSection() {
       </div>
 
       {/* ===== NOS POSEURS ===== */}
-      <div className={styles.installersBlock}>
+      <div className={styles.content}>
         <h2 className={styles.installersTitle}>
-          {lang === "fr" ? "NOS POSEURS" : "OUR INSTALLERS"}
+          {lang === "fr" ? "NOS INSTALLATEURS" : "OUR INSTALLERS"}
         </h2>
 
-        <div className={styles.installersImage}>
-          <Image
-            src="/poseurs.jpg"
-            alt={lang === "fr" ? "Équipe de pose" : "Installation team"}
-            layout="fill"
-            objectFit="cover"
-          />
-          <div className={styles.imageOverlay} />
-        </div>
+        <div className={styles.historyWrapperReverse}>
+          <div className={styles.historyImageSide}>
+            <Image
+              src="/poseurs.jpg"
+              alt={lang === "fr" ? "Équipe de pose" : "Installation team"}
+              layout="fill"
+              objectFit="cover"
+            />
+            <div className={styles.imageOverlay} />
+          </div>
 
-        <div className={styles.comments}>
-          {INSTALLER_COMMENTS.map((c) => (
-            <p key={c.key}>{lang === "fr" ? c.fr : c.en}</p>
-          ))}
+          <div className={styles.historyTextSide}>
+            {INSTALLER_COMMENTS.map((c) => (
+              <p key={c.key}>{lang === "fr" ? c.fr : c.en}</p>
+            ))}
+          </div>
         </div>
       </div>
     </section>

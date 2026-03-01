@@ -56,11 +56,11 @@
 .content {
   width: 100%;
   max-width: 1200px;
-  padding: 60px 24px 80px;
+  padding: 20px 24px 20px; /* Réduit drastiquement le padding haut (30->20) et bas (80->20) */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: 20px;
 }
 
 .intro {
@@ -137,9 +137,123 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem; /* Réduit de 2rem à 0.5rem */
   color: #1f2937;
-  text-align: center; /* ✅ Titre centré */
+  text-align: center;
+}
+
+/* === SIDE-BY-SIDE HISTORY SECTION === */
+.historyWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 10px 0 20px; /* Réduit le padding bas de 60px à 20px pour remonter la suite */
+  margin: 0 auto;
+}
+
+.collageContainer {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: center; /* Centrage vertical par rapport au texte */
+}
+
+.mainPhoto {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+  transition: transform 0.5s ease;
+  background: transparent; /* No gray background */
+}
+
+/* Force Next.js wrapper to be tight */
+.mainPhoto :global(span) {
+  display: block !important;
+}
+
+.mainPhoto img {
+  border-radius: 12px;
+  object-fit: contain !important;
+}
+
+.secondaryPhoto {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 45%;
+  max-width: 200px;
+  aspect-ratio: 4 / 3;
+  z-index: 3; /* More prominent */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  transition: transform 0.5s ease;
+  background: #fff;
+}
+
+.secondaryPhoto img {
+  object-fit: cover;
+  object-position: 35% center; /* Ajustement final : un tout petit peu vers la gauche */
+}
+
+.collageContainer:hover .mainPhoto {
+  transform: translateY(-10px) rotate(1deg);
+}
+
+.collageContainer:hover .secondaryPhoto {
+  transform: translate(-10px, -10px) rotate(-2deg);
+}
+
+.historyWrapperReverse {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 5rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px 0 60px; /* Réduit le padding top de 60px à 20px */
+  margin: 0 auto;
+}
+
+.historyImageSide {
+  flex: 1;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.historyImageSide img {
+  object-fit: cover;
+}
+
+.historyImageSide:hover {
+  transform: translateY(-8px) rotate(1deg);
+}
+
+.historyTextSide {
+  flex: 1.2;
+  text-align: left;
+}
+
+.historyTextSide p {
+  color: rgba(15, 23, 42, 0.75);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.historyTextSide p:last-child {
+  margin-bottom: 0;
 }
 
 /* === IMAGE DE POSEURS / HISTOIRE === */
@@ -188,6 +302,38 @@
     min-height: 220px;
     height: auto;
     padding: 3.5rem 0;
+  }
+
+  .historyWrapper {
+    flex-direction: column;
+    gap: 4rem;
+    padding: 20px 0;
+  }
+
+  .collageContainer {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .secondaryPhoto {
+    width: 45%;
+    bottom: -10px;
+    left: 5px;
+  }
+
+  .historyWrapperReverse {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 20px 0;
+  }
+
+  .historyImageSide {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .historyTextSide {
+    text-align: center;
   }
 
   .content {
