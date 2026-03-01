@@ -52,9 +52,9 @@ const TRANSLATIONS = {
     heroDesc: "Une esthétique épurée pour un intérieur parfaitement ordonné.",
     altHero: "Bannière collections placards CMC",
     storageKicker: "Rangement intérieur",
-    storageMainTitle: "RANGEMENTS INTÉRIEUR",
+    storageMainTitle: "RANGEMENTS INTÉRIEURS",
     storageText1: "Dans notre quête d’une maison à la fois fonctionnelle et esthétique, nos placards et dressings jouent un rôle essentiel. Bien plus que de simples meubles, ils sont le cœur de votre organisation quotidienne, alliant notre savoir-faire à une élégance qui sublime chaque pièce.",
-    storageText2: "Qu’il s’agisse d’un dressing spacieux ou d’un placard optimisé, nous concevons des solutions de rangement qui s’adaptent précisément à vos besoins et à votre style de vie. Chaque centimètre est exploité pour transformer votre espace de vie en un lieu parfaitement ordonné",
+    storageText2: "Qu’il s’agisse d’un dressing spacieux ou d’un placard optimisé, nous concevons des solutions de rangement qui s’adaptent précisément à vos besoins et à votre style de vie. Chaque centimètre est exploité pour transformer votre espace de vie en un lieu parfaitement ordonné.",
     storageText3: "Avec une vaste palette de coloris et une infinité d’agencements, nous vous permettons de créer un espace qui reflète votre personnalité. Allier la praticité au design haut de gamme est désormais à votre portée grâce à notre expertise technique.",
     designTitle: "Nos designs",
    

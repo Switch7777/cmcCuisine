@@ -26,7 +26,9 @@ const NAV_LABELS = {
 const BACKGROUNDS = [
   "/background.jpg",
   "/background-2.jpg",
-  "/background3.png",
+  
+  "/background4.jpeg",
+  "/background5.png",
 ];
 const SLIDE_INTERVAL_MS = 4500;
 const FADE_MS = 1400;

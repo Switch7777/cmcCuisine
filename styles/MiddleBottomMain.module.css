@@ -11,22 +11,22 @@
   position: relative;
   width: 100%;
   aspect-ratio: 9472 / 6912;
-  max-height: 420px;
+  max-height: 490px;
   overflow: clip; /* ✅ évite tout dépassement visuel */
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Image d’arrière-plan : Sépia + léger zoom au hover */
+/* Image d’arrière-plan : Black and white  + léger zoom au hover */
 .bg {
   object-fit: cover;
   object-position: center;
-  filter: sepia(0.6) brightness(75%) contrast(1.1);
+  filter: grayscale(120%) brightness(60%) contrast(1.1);
   transition: filter 0.8s ease, transform 1.2s cubic-bezier(0.2, 0, 0.2, 1);
 }
 
 .banner:hover .bg {
-  filter: sepia(0.8) brightness(100%);
+  
   transform: scale(1.04);
 }
 
