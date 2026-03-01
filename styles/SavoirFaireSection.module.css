@@ -213,19 +213,20 @@
 
 .historyWrapperReverse {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   align-items: center;
-  gap: 5rem;
+  gap: 2.5rem;
   max-width: 1200px;
   width: 100%;
-  padding: 20px 0 60px; /* Réduit le padding top de 60px à 20px */
+  padding: 20px 0 60px;
   margin: 0 auto;
 }
 
 .historyImageSide {
-  flex: 1;
+  width: 100%;
+  max-width: 900px;
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
@@ -254,6 +255,14 @@
 
 .historyTextSide p:last-child {
   margin-bottom: 0;
+}
+
+/* Specific styles for vertical Nos Installateurs section */
+.historyWrapperReverse .historyTextSide {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  flex: none;
 }
 
 /* === IMAGE DE POSEURS / HISTOIRE === */
