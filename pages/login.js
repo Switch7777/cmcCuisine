@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "../styles/LoginPage.module.css";
 import Navbar from "../components/NavBarNew";
@@ -14,8 +13,6 @@ const LABELS = {
     subtitle: "Accédez à votre espace professionnel.",
     identifier: "Identifiant",
     password: "Mot de passe",
-    remember: "Se souvenir de moi",
-    forgot: "Mot de passe oublié ?",
     login: "Se connecter",
     identifierPlaceholder: "Votre identifiant",
     passwordPlaceholder: "Votre mot de passe",
@@ -28,8 +25,6 @@ const LABELS = {
     subtitle: "Access your professional space.",
     identifier: "Username",
     password: "Password",
-    remember: "Remember me",
-    forgot: "Forgot password?",
     login: "Sign in",
     identifierPlaceholder: "Your username",
     passwordPlaceholder: "Your password",
@@ -46,9 +41,8 @@ export default function LoginPage() {
 
   const [showPwd, setShowPwd] = useState(false);
   const [form, setForm] = useState({
-    identifier: "",
+    email: "",
     password: "",
-    remember: true,
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -79,7 +73,6 @@ export default function LoginPage() {
         throw new Error(data.message || L.error);
       }
 
-      // on stocke le token pour les futurs appels protégés
       if (typeof window !== "undefined") {
         localStorage.setItem("cmc_token", data.token);
         localStorage.setItem(
@@ -112,10 +105,9 @@ export default function LoginPage() {
       <Navbar transparent />
 
       <main className={styles.main}>
-        {/* IMAGE DE FOND */}
         <div className={styles.hero} aria-hidden="true">
           <Image
-            src="/atelier.jpg"
+            src="/bureau.png"
             alt=""
             layout="fill"
             className={styles.bg}
@@ -124,79 +116,62 @@ export default function LoginPage() {
           <div className={styles.overlay} />
         </div>
 
-        {/* FORMULAIRE DE CONNEXION */}
         <section className={styles.section}>
           <div className={styles.card}>
-            <h1 className={styles.title}>{L.title}</h1>
-            <p className={styles.subtitle}>{L.subtitle}</p>
+            <header className={styles.header}>
+              <h1 className={styles.title}>{L.title}</h1>
+              <p className={styles.subtitle}>{L.subtitle}</p>
+            </header>
 
             <form className={styles.form} onSubmit={onSubmit}>
-              {/* Identifiant */}
-              <label className={styles.label} htmlFor="identifier">
-                {L.identifier}
-              </label>
-              <input
-                id="identifier"
-                type="text"
-                required
-                className={styles.input}
-                placeholder={L.identifierPlaceholder}
-                value={form.email}
-                onChange={(e) =>
-                  setForm((f) => ({ ...f, email: e.target.value }))
-                }
-                autoComplete="username"
-              />
-
-              {/* Mot de passe */}
-              <label className={styles.label} htmlFor="password">
-                {L.password}
-              </label>
-              <div className={styles.pwdWrap}>
+              <div className={styles.inputGroup}>
+                <label className={styles.label} htmlFor="identifier">
+                  {L.identifier}
+                </label>
                 <input
-                  id="password"
-                  type={showPwd ? "text" : "password"}
+                  id="identifier"
+                  type="text"
                   required
                   className={styles.input}
-                  placeholder={L.passwordPlaceholder}
-                  value={form.password}
+                  placeholder={L.identifierPlaceholder}
+                  value={form.email}
                   onChange={(e) =>
-                    setForm((f) => ({ ...f, password: e.target.value }))
+                    setForm((f) => ({ ...f, email: e.target.value }))
                   }
-                  autoComplete="current-password"
+                  autoComplete="username"
                 />
-                <button
-                  type="button"
-                  className={styles.pwdToggle}
-                  onClick={() => setShowPwd((s) => !s)}
-                  aria-label={showPwd ? L.hide : L.show}
-                >
-                  {showPwd ? L.hide : L.show}
-                </button>
               </div>
 
-              {/* message d'erreur */}
+              <div className={styles.inputGroup}>
+                <label className={styles.label} htmlFor="password">
+                  {L.password}
+                </label>
+                <div className={styles.pwdWrap}>
+                  <input
+                    id="password"
+                    type={showPwd ? "text" : "password"}
+                    required
+                    className={styles.input}
+                    placeholder={L.passwordPlaceholder}
+                    value={form.password}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, password: e.target.value }))
+                    }
+                    autoComplete="current-password"
+                  />
+                  <button
+                    type="button"
+                    className={styles.pwdToggle}
+                    onClick={() => setShowPwd((s) => !s)}
+                    aria-label={showPwd ? L.hide : L.show}
+                  >
+                    {showPwd ? L.hide : L.show}
+                  </button>
+                </div>
+              </div>
+
               {error ? <p className={styles.error}>{error}</p> : null}
 
-              {/* Option "remember" + mot de passe oublié (si tu la veux encore) */}
-              <div className={styles.row}>
-                <label className={styles.check}>
-                  <input
-                    type="checkbox"
-                    checked={form.remember}
-                    onChange={(e) =>
-                      setForm((f) => ({ ...f, remember: e.target.checked }))
-                    }
-                  />
-                  <span>{L.remember}</span>
-                </label>
-
-                <Link href="/reset-password" legacyBehavior>
-                  <a className={styles.link}>{L.forgot}</a>
-                </Link>
-              </div>
-
-              {/* Bouton de connexion */}
               <button
                 type="submit"
                 className={styles.submit}
@@ -209,7 +184,7 @@ export default function LoginPage() {
         </section>
       </main>
 
-      <FooterSection />
+    
     </>
   );
 }

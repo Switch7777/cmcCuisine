@@ -149,32 +149,37 @@ export default function AdminPage() {
   return (
     <>
       <Head>
-        <title>Admin — CMC Cuisine</title>
+        <title>Dashboard Admin — CMC Cuisine</title>
       </Head>
       <div className={styles.page}>
         <header className={styles.topbar}>
-          <h1 className={styles.logo}>
-            CMC Cuisine — Gestion de la banque de photo
-          </h1>
+          <h1 className={styles.logo}>CMC CUISINE — ADMIN</h1>
           <div className={styles.topActions}>
             <button onClick={fetchImages} className={styles.secondaryBtn}>
               Rafraîchir
             </button>
             <button onClick={handleLogout} className={styles.logoutBtn}>
-              Se déconnecter
+              Déconnexion
             </button>
           </div>
         </header>
 
         <main className={styles.main}>
-          {/* Bloc upload */}
+          {/* SECTION : AJOUT */}
           <section className={styles.panel}>
-            <h2 className={styles.panelTitle}>Ajouter une réalisation</h2>
-            {error ? <p className={styles.error}>{error}</p> : null}
-            {success ? <p className={styles.success}>{success}</p> : null}
+            <header>
+              <h2 className={styles.panelTitle}>Ajouter une photo</h2>
+              <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.85rem" }}>
+                Publier une nouvelle réalisation
+              </p>
+            </header>
+
+            {error ? <div className={styles.error}>{error}</div> : null}
+            {success ? <div className={styles.success}>{success}</div> : null}
+
             <form className={styles.form} onSubmit={onSubmit}>
               <label className={styles.label}>
-                Titre (optionnel)
+                Titre du projet
                 <input
                   type="text"
                   value={form.title}
@@ -182,25 +187,25 @@ export default function AdminPage() {
                     setForm((f) => ({ ...f, title: e.target.value }))
                   }
                   className={styles.input}
-                  placeholder="Titre du projet"
+                  placeholder="Ex: Cuisine Moderne - Paris"
                 />
               </label>
 
               <label className={styles.label}>
-                Description (optionnel)
+                Description
                 <textarea
-                  rows={3}
+                  rows={4}
                   value={form.description}
                   onChange={(e) =>
                     setForm((f) => ({ ...f, description: e.target.value }))
                   }
                   className={styles.textarea}
-                  placeholder="Emplacement du projet, type du projet,...."
+                  placeholder="Détails du projet..."
                 />
               </label>
 
               <label className={styles.label}>
-                Image
+                Fichier image
                 <input
                   type="file"
                   accept="image/*"
@@ -216,26 +221,27 @@ export default function AdminPage() {
                 className={styles.primaryBtn}
                 disabled={uploading}
               >
-                {uploading ? "Envoi en cours..." : "Ajouter la photo"}
+                {uploading ? "Chargement..." : "Publier maintenant"}
               </button>
             </form>
           </section>
 
-          {/* Bloc liste */}
+          {/* SECTION : LISTE */}
           <section className={styles.panel}>
-            <div className={styles.panelHeader}>
-              <h2 className={styles.panelTitle}>Réalisations en ligne</h2>
-              {loadingList ? (
-                <span className={styles.badge}>Chargement…</span>
-              ) : null}
-            </div>
+            <header className={styles.panelHeader}>
+              <div>
+                <h2 className={styles.panelTitle}>Réalisations en ligne</h2>
+                <span className={styles.badge}>
+                  {images.length} photo{images.length > 1 ? "s" : ""}
+                </span>
+              </div>
+              {loadingList && <span className={styles.badge}>Chargement...</span>}
+            </header>
 
-            {loadingList ? (
-              <p className={styles.muted}>Chargement des photos…</p>
+            {loadingList && images.length === 0 ? (
+              <p className={styles.muted}>Récupération de la banque d'images...</p>
             ) : images.length === 0 ? (
-              <p className={styles.muted}>
-                Aucune photo trouvée. Ajoutez-en une.
-              </p>
+              <p className={styles.muted}>Aucune photo dans la galerie.</p>
             ) : (
               <div className={styles.grid}>
                 {images.map((img) => (
@@ -249,7 +255,7 @@ export default function AdminPage() {
                     </div>
                     <div className={styles.cardBody}>
                       <p className={styles.cardTitle}>
-                        {img.context?.alt || "Réalisation"}
+                        {img.context?.alt || img.public_id.split("/").pop()}
                       </p>
                       <button
                         onClick={() => onDelete(img.public_id)}
