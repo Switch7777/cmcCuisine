@@ -64,7 +64,7 @@ export default function AdminPage() {
       localStorage.removeItem("cmc_token");
       localStorage.removeItem("cmc_user");
     }
-    router.push("/");
+    router.push("/login");
   };
 
   const onSubmit = async (e) => {
@@ -254,9 +254,6 @@ export default function AdminPage() {
                       />
                     </div>
                     <div className={styles.cardBody}>
-                      <p className={styles.cardTitle}>
-                        {img.context?.alt || img.public_id.split("/").pop()}
-                      </p>
                       <button
                         onClick={() => onDelete(img.public_id)}
                         className={styles.deleteBtn}

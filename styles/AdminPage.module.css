@@ -238,20 +238,9 @@
 }
 
 .cardBody {
-  padding: 20px;
+  padding: 16px;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.cardTitle {
-  font-weight: 600;
-  font-size: 1rem;
-  color: #fff;
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  justify-content: flex-end;
 }
 
 .deleteBtn {
