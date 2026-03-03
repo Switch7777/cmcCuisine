@@ -179,7 +179,7 @@ export default function SavoirFaireSection() {
         <div className={styles.historyWrapperReverse}>
           <div className={styles.historyImageSide}>
             <Image
-              src="/poseurs.jpg"
+              src="/QuiSommesNousContent/poseurs.jpg"
               alt={lang === "fr" ? "Équipe de pose" : "Installation team"}
               layout="fill"
               objectFit="cover"
