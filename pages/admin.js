@@ -127,19 +127,23 @@ export default function AdminPage() {
 
     try {
       const res = await fetch(
-        `${API_BASE}/api/realisations/${encodeURIComponent(public_id)}`,
+        `${API_BASE}/api/realisations/delete`, // 💡 Plus d'ID dans l'URL !
         {
-          method: "DELETE",
+          method: "POST",
           headers: {
+            "Content-Type": "application/json", // Indispensable pour lire le body
             Authorization: `Bearer ${token}`,
           },
+          // 💡 On envoie le public_id ici, bien au chaud !
+          body: JSON.stringify({ public_id: public_id }) 
         }
       );
+      
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
         throw new Error(data.message || "Suppression impossible");
       }
-      // on retire côté front
+      
       setImages((imgs) => imgs.filter((img) => img.public_id !== public_id));
     } catch (err) {
       setError(err.message);

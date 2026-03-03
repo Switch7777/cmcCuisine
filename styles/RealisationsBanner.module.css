@@ -4,7 +4,7 @@
   min-height: 260px; /* hauteur type bandeau */
   height: 28vh;
   max-height: 320px;
-  background: url("/banner/cuisine.jpg") center center/cover no-repeat;
+  background: url("/banner/cuisine.webp") center center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
