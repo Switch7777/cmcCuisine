@@ -3,7 +3,7 @@ import LogoMiddleMainUn from "./logo/LogoMiddleMainUn";
 import LogoMiddleMainDeux from "./logo/LogoMiddleMainDeux";
 import LogoMiddleMainTrois from "./logo/LogoMiddleMainTrois";
 import LogoMiddleMainQuatre from "./logo/LogoMiddleMainQuatre";
-import { useLang } from "../context/LangContext"; // ✅ import du contexte
+import { useLang } from "../context/LangContext"; 
 
 export default function MiddleMain() {
   const { lang } = useLang();
@@ -13,7 +13,6 @@ export default function MiddleMain() {
       <h2 className={styles.title}>
         {lang === "fr" ? "Nous sommes à vos côtés" : "We are by your side"}
       </h2>
-
       <div className={styles.row}>
         <LogoMiddleMainUn />
         <LogoMiddleMainDeux />

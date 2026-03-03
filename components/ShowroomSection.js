@@ -46,7 +46,7 @@ export default function ShowroomSection() {
         <div className={styles.rightImages}>
           <figure className={styles.hero}>
             <Image
-              src="/bureau.png"
+              src="/login/bureau.webp"
               alt={
                 lang === "fr"
                   ? "Showroom CMC Cuisine à Villeneuve-Loubet"
@@ -58,8 +58,6 @@ export default function ShowroomSection() {
               priority
             />
           </figure>
-
-          
         </div>
       </div>
     </section>

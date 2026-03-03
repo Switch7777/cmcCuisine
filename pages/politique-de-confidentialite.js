@@ -18,7 +18,7 @@ export default function PolitiqueConfidentialite() {
       dataList: [
         "Identité et coordonnées (nom, e-mail, téléphone) quand vous nous contactez",
         "Contenu de votre message",
-        "Données de navigation (cookies, statistiques)",
+        "Données de navigation (cookies,statistiques)",
       ],
       purposes: "2. Finalités",
       purposesList: [

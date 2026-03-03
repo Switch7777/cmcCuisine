@@ -25,5 +25,4 @@ function LogoMiddleMainDeux() {
     </div>
   );
 }
-
 export default LogoMiddleMainDeux;

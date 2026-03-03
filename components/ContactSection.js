@@ -118,7 +118,7 @@ export default function ContactSection() {
             Tél : <a href="tel:+33493201918">04 93 20 19 18</a>
             <br />
             Mail :{" "}
-            <a href="mailto:contact@cmc-cuisine.com">contact@cmc-cuisine.com</a>
+            <a href="mailto:contact@cmccuisine.com">contact@cmccuisine.com</a>
           </p>
           <div className={styles.hours}>
             <h3>{T.hours}</h3>

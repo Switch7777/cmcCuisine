@@ -10,7 +10,7 @@ export default function RealisationsPage() {
       <Head>
         <title>Nos réalisations — CMC Cuisine</title>
         <meta
-          name="description"
+          name="description "
           content="Découvrez une sélection de nos réalisations : cuisines sur-mesure, détails de finitions et matériaux premium."
         />
       </Head>

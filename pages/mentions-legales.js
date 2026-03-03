@@ -26,18 +26,8 @@ export default function MentionsLegales() {
           SIRET : 52350278900036
         </>
       ),
-      directorContent: "Le directeur de la publication est : à compléter.",
-      hostingContent: (
-        <>
-          Le site est hébergé par :
-          <br />
-          Vercel Inc.
-          <br />
-          440 N Barranca Ave #4133
-          <br />
-          Covina, CA 91723, USA
-        </>
-      ),
+      
+      
       ipContent:
         "L’ensemble du contenu du site est protégé par le droit de la propriété intellectuelle. Toute reproduction est interdite sans autorisation écrite préalable.",
       liabilityContent:
@@ -61,18 +51,7 @@ export default function MentionsLegales() {
           SIRET : 52350278900036
         </>
       ),
-      directorContent: "Publishing director: to be completed.",
-      hostingContent: (
-        <>
-          Website hosted by:
-          <br />
-          Vercel Inc.
-          <br />
-          440 N Barranca Ave #4133
-          <br />
-          Covina, CA 91723, USA
-        </>
-      ),
+      
       ipContent:
         "All content on this website is protected by intellectual property law. Any reproduction without prior written consent is prohibited.",
       liabilityContent:

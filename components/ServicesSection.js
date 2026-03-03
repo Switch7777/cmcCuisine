@@ -8,13 +8,13 @@ const CARDS = {
     {
       label: "Cuisines",
       href: "/servicesCuisine",
-      img: "/banner/cuisine.jpg",
+      img: "/banner/cuisine.webp",
       alt: "Cuisine sur-mesure",
     },
     {
       label: "Salle de bains",
       href: "/servicesSdb",
-      img: "/banner/sdb.jpg",
+      img: "/banner/sdb.webp",
       alt: "Salle de bains design",
     },
     {
@@ -28,19 +28,19 @@ const CARDS = {
     {
       label: "Kitchens",
       href: "/servicesCuisine",
-      img: "/services/cuisines.jpg",
+      img: "/services/cuisines.webp",
       alt: "Custom kitchen",
     },
     {
       label: "Bathrooms",
       href: "/servicesSdb",
-      img: "/services/sdb.jpg",
+      img: "/services/sdb.webp",
       alt: "Bathroom design",
     },
     {
       label: "Closets",
       href: "/servicesPlacard",
-      img: "/services/placard.jpg",
+      img: "/services/placard.webp",
       alt: "Closet and wardrobe",
     },
   ],
@@ -63,7 +63,7 @@ export default function ServicesSection() {
           <Link href={it.href} key={it.href} legacyBehavior>
             <a className={styles.card} aria-label={it.label}>
               <div className={styles.media}>
-                {/* Next 12: responsive = ratio garanti, pas de bug de hauteur */}
+                
                 <Image
                   src={it.img}
                   alt={it.alt}

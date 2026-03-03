@@ -1,5 +1,4 @@
 import styles from "../styles/RealisationsBanner.module.css";
-
 import { useLang } from "../context/LangContext";
 export default function RealisationsBanner() {
   const { lang } = useLang();
@@ -7,7 +6,7 @@ export default function RealisationsBanner() {
     <section className={styles.banner}>
       <div className={styles.overlay}>
         <h1 className={styles.title}>
-          {lang === "fr" ? "Nos Realisations" : "Our project"}
+          {lang === "fr" ? "Nos Realisations " : "Our project"}
         </h1>
         <p className={styles.subtitle}>
           {lang === "fr"

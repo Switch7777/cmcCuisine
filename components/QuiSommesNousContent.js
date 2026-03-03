@@ -5,19 +5,19 @@ import styles from "../styles/SavoirFaireSection.module.css";
 const TEAM = [
   {
     key: "georges",
-    img: "/georges.png",
+    img: "/QuiSommesNousContent/staff/georges.png",
     fr: "Georges Martinez, Gérant",
     en: "Georges Martinez, Manager",
   },
   {
     key: "martine",
-    img: "/collaborateurs/martine.JPG",
+    img: "/QuiSommesNousContent/staff/martine.JPG",
     fr: "Martine Jarc, Directrice administrative et financière (Associée)",
     en: "Martine Jarc, Administrative & Financial Director (Partner)",
   },
   {
     key: "thierry",
-    img: "/collaborateurs/thierry.jpg",
+    img: "/QuiSommesNousContent/staff/thierry.jpg",
     fr: "Thierry Battesti, Directeur technique (Associé)",
     en: "Thierry Battesti, Technical Director (Partner)",
     objectPosition: "center 5%", 
@@ -25,31 +25,31 @@ const TEAM = [
 
   {
     key: "laurent",
-    img: "/collaborateurs/laurent.png",
+    img: "/QuiSommesNousContent/staff/laurent.png",
     fr: "Laurent Bourgain, Directeur d'agence",
     en: "Laurent Bourgain, Branch Director",
   },{
     key: "aurelie",
-    img: "/collaborateurs/aurelie.jpg",
+    img: "/QuiSommesNousContent/staff/aurelie.jpg",
     fr: "Aurélie Lepaulmier, Responsable de programme (Associée)",
     en: "Aurélie Lepaulmier, Program Director (Partner)",
   },
   {
     key: "laura",
-    img: "/laura.jpg",
+    img: "/QuiSommesNousContent/staff/laura.jpg",
     fr: "Laura Poncelet, Assistante de direction",
     en: "Laura Poncelet, Assistant Director",
   },
   
   {
     key: "caroline",
-    img: "/collaborateurs/caroline.jpg",
+    img: "/QuiSommesNousContent/staff/caroline.jpg",
     fr: "Caroline Ottou, Concepteur",
     en: "Caroline Ottou, Designer",
   },
   {
     key: "LaurentC",
-    img: "/collaborateurs/laurentc.jpg",
+    img: "/QuiSommesNousContent/staff/laurentc.jpg",
     fr: "Laurent Chiapale, Concepteur",
     en: "Laurent Chiapale, Designer",
   },
@@ -58,7 +58,7 @@ const TEAM = [
 const INSTALLER_COMMENTS = [
   {
     key: "c1",
-    fr: "Nos poseurs sont formés en interne afin de garantir un montage précis et soigné.",
+    fr: "Nos installateurs sont formés en interne afin de garantir un montage précis et soigné.",
     en: "Our installers are trained in-house to ensure precise and careful assembly.",
   },
   {
@@ -110,7 +110,7 @@ export default function SavoirFaireSection() {
           <div className={styles.collageContainer}>
             <div className={styles.mainPhoto}>
               <Image
-                src="/staff.png"
+                src="/QuiSommesNousContent/staff/staff.png"
                 alt="L'équipe CMC Cuisine"
                 width={1200}
                 height={800}
@@ -121,7 +121,7 @@ export default function SavoirFaireSection() {
             
             <div className={styles.secondaryPhoto}>
               <Image
-                src="/history.png"
+                src="/QuiSommesNousContent/enseignes.png"
                 alt="CMC Cuisine Historique"
                 layout="fill"
                 objectFit="cover"

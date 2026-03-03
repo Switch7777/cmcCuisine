@@ -27,9 +27,7 @@ export default function PageQuiSommesNous() {
         <title>{m.title}</title>
         <meta name="description" content={m.desc} />
       </Head>
-
       <QuiSommesNousContent />
-
       <FooterSection />
     </>
   );

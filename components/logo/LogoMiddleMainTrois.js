@@ -25,5 +25,4 @@ function LogoMiddleMainTrois() {
     </div>
   );
 }
-
 export default LogoMiddleMainTrois;

@@ -24,5 +24,4 @@ function LogoMiddleMainUn() {
     </div>
   );
 }
-
 export default LogoMiddleMainUn;

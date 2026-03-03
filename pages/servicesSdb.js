@@ -10,10 +10,9 @@ export default function ServicesSdb() {
         <title>Nos collections de salle de bain — CMC Cuisine</title>
         <meta
           name="description"
-          content="Découvrez nos collections de salle de bain sur-mesure : Verso, Delta, Kyoto, et bien d'autres modèles design et fonctionnels."
+          content="Découvrez nos collections de salle de bain sur-mesure"
         />
       </Head>
-
       <Navbar />
       <main>
         <ServicesSdbCat />

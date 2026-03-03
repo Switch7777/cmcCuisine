@@ -76,19 +76,37 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   background: #f9f5f2;
   color: #1b1b1b;
   border-radius: 999px;
-  padding: 0.85rem 1.4rem;
+  padding: 1rem 1.8rem;
   text-decoration: none;
   font-family: "Jost", sans-serif;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
 }
+
+.buttonIcon {
+  transition: transform 0.3s ease;
+}
+
 .button:hover {
-  background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  transform: translateY(-2px);
+  background: #ffffff;
+  color: #000;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover .buttonIcon {
+  transform: translateX(5px);
 }
 
 /* ===== FLECHE SCROLL ===== */

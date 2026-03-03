@@ -787,7 +787,7 @@ export default function ServicesSdbCat() {
       {/* --- Bandeau top --- */}
       <div className={styles.hero}>
         <Image
-          src="/banner/sdb.jpg"
+          src="/banner/sdb.webp"
           alt="Bannière collections cuisines CMC"
           layout="fill"
           objectFit="cover"

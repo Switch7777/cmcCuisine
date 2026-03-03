@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/NavBarNew.module.css";
-import { User, AlertTriangle } from "lucide-react";
+import { User } from "lucide-react";
 import ReactCountryFlag from "react-country-flag";
 import { useLang } from "../context/LangContext";
 
@@ -13,7 +13,7 @@ const NAV_LABELS = {
     home: "Accueil",
     services: "Nos services",
     servicesKitchen: "Cuisines",
-    servicesBathroom: "Salles de bains",
+    servicesBathroom: "Salle de bains",
     servicesCloset: "Placards / Dressings",
     servicesRenovation: "Rénovations",
     works: "Nos réalisations",
@@ -48,8 +48,7 @@ const NAV_LABELS = {
 export default function NavBar() {
   const { lang, switchLang } = useLang();
   const L = NAV_LABELS[lang] || NAV_LABELS.fr;
-
-  const [open, setOpen] = useState(false);
+const [open, setOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [solid, setSolid] = useState(false);
 
@@ -112,7 +111,7 @@ export default function NavBar() {
             <a className={styles.brandLink} aria-label={L.brandAria}>
               <span className={styles.logoWrap}>
                 <Image
-                  src="/logoblancmoins.png"
+                  src="/NavBarNew/logo1.png"
                   alt="CMC"
                   width={166}
                   height={60}

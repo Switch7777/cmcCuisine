@@ -1284,7 +1284,7 @@ export default function ServicesCuisineCat() {
       {/* --- Bandeau top --- */}
       <div className={styles.hero}>
         <Image
-          src="/banner/cuisine.jpg"
+          src="/banner/cuisine.webp"
           alt="Bannière collections cuisines CMC"
           layout="fill"
           objectFit="cover"

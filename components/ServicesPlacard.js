@@ -175,7 +175,7 @@ export default function ServicesPlacardCat() {
   const nextMain = () => setActiveSlide((prev) => Math.min(prev + 1, maxSlide));
   const prevMain = () => setActiveSlide((prev) => Math.max(prev - 1, 0));
 
-  // Recalculate if window resized and activeSlide is out of bounds
+  
   useEffect(() => {
     if (activeSlide > maxSlide) {
       setActiveSlide(maxSlide);

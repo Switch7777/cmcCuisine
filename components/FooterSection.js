@@ -48,7 +48,7 @@ export default function FooterSection() {
           <div className={styles.brandBox}>
             <div className={styles.logoBox}>
               <Image
-                src="/logo.png"
+                src="/footer/logo.png"
                 alt={T.showroomAlt}
                 layout="responsive"
                 width={190}
@@ -154,7 +154,7 @@ export default function FooterSection() {
               <a href="tel:+33493201918">04 93 20 19 18</a>
               <br />
               <br />
-              <a href="mailto:contact@cmc-cuisine.com">contact@cmc-cuisine.com</a>
+              <a href="mailto:contact@cmccuisine.com">contact@cmccuisine.com</a>
             </address>
           </div>
         </div>

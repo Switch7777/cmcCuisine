@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import styles from "../styles/HeaderHero.module.css";
 import Image from "next/image";
@@ -22,13 +23,11 @@ const NAV_LABELS = {
   },
 };
 
-// Images de fond (dans /public)
 const BACKGROUNDS = [
-  "/background.jpg",
-  "/background-2.jpg",
-  
-  "/background4.jpeg",
-  "/background5.png",
+  "/headerHero/background.webp",
+  "/headerHero/background2.webp",
+  "/headerHero/background3.webp",
+  "/headerHero/background4.webp",
 ];
 const SLIDE_INTERVAL_MS = 4500;
 const FADE_MS = 1400;
@@ -36,11 +35,8 @@ const FADE_MS = 1400;
 export default function HeaderHero() {
   const { lang } = useLang();
   const L = NAV_LABELS[lang];
-
   const [bgIndex, setBgIndex] = useState(0);
   const timerRef = useRef(null);
-
-  
   const [showArrow, setShowArrow] = useState(true);
 
   // précharge
@@ -119,7 +115,7 @@ export default function HeaderHero() {
         <div className={styles.contentWrap}>
           <div className={styles.heroLogo}>
             <Image
-              src="/logoblancmoins.png"
+              src="/headerHero/logo1.png"
               alt={L.logoAlt}
               width={390} // anciennement 260 → x1.5
               height={135} // anciennement 90 → x1.5
@@ -129,7 +125,10 @@ export default function HeaderHero() {
           <h1 className={styles.title}>{L.heroTitle}</h1>
           <p className={styles.subtitle}>{L.heroSubtitle}</p>
           <Link href="/contact">
-            <a className={styles.button}>{L.heroCta}</a>
+            <a className={styles.button}>
+              <span>{L.heroCta}</span>
+              <ArrowRight size={20} className={styles.buttonIcon} />
+            </a>
           </Link>
         </div>
       </div>

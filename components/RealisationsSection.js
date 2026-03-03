@@ -5,19 +5,19 @@ import styles from "../styles/RealisationsSection.module.css";
 // fallback si le backend ne répond pas
 const FALLBACK_IMAGES = [
   {
-    src: "/realisations/real-1.jpg",
+    src: "/realisations/real-1.webp",
     alt: "Cuisine sur-mesure — réalisation 1",
   },
   {
-    src: "/realisations/real-2.jpg",
+    src: "/realisations/real-2.webp",
     alt: "Cuisine sur-mesure — réalisation 2",
   },
   {
-    src: "/realisations/real-3.jpg",
+    src: "/realisations/real-3.webp",
     alt: "Cuisine sur-mesure — réalisation 3",
   },
   {
-    src: "/realisations/real-4.jpg",
+    src: "/realisations/real-4.webp",
     alt: "Cuisine sur-mesure — réalisation 4",
   },
   {
@@ -33,7 +33,7 @@ export default function RealisationsSection() {
   const touchStartX = useRef(null);
   const touchActive = useRef(false);
 
-  // récupère les images Cloudinary depuis ton backend
+  // récupère les images Cloudinary 
   useEffect(() => {
     const API_BASE = process.env.NEXT_PUBLIC_API_URL;
     fetch(`${API_BASE}/api/realisations`)
@@ -114,7 +114,7 @@ export default function RealisationsSection() {
                 <Image
                   src={img.src}
                   alt={img.alt}
-                  layout="fill" // ✅ Next 12
+                  layout="fill" 
                   objectFit="cover"
                   className={styles.slideImg}
                   priority={i === 0}

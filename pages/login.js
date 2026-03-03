@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import styles from "../styles/LoginPage.module.css";
 import Navbar from "../components/NavBarNew";
-import FooterSection from "../components/FooterSection";
 import { useLang } from "../context/LangContext";
 
 const LABELS = {
@@ -53,8 +52,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const API_BASE =
-        process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+      const API_BASE =process.env.NEXT_PUBLIC_API_URL ;
 
       const res = await fetch(`${API_BASE}/api/auth/login`, {
         method: "POST",
@@ -107,7 +105,7 @@ export default function LoginPage() {
       <main className={styles.main}>
         <div className={styles.hero} aria-hidden="true">
           <Image
-            src="/bureau.png"
+            src="/login/bureau.webp"
             alt=""
             layout="fill"
             className={styles.bg}

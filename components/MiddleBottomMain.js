@@ -1,7 +1,7 @@
 import styles from "../styles/MiddleBottomMain.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { useLang } from "../context/LangContext"; // ✅ import du contexte
+import { useLang } from "../context/LangContext"; 
 
 function MiddleBottomMain() {
   const { lang } = useLang();
@@ -10,7 +10,7 @@ function MiddleBottomMain() {
     <section className={styles.main}>
       <div className={styles.banner}>
         <Image
-          src="/bannerqui.png"
+          src="/MiddleBottomMain/croquis.webp"
           alt={lang === "fr" ? "50 ans d'expérience" : "50 years of experience"}
           layout="fill"
           className={styles.bg}

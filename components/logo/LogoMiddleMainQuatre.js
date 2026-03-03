@@ -24,5 +24,4 @@ function LogoMiddleMainQuatre() {
     </div>
   );
 }
-
 export default LogoMiddleMainQuatre;
