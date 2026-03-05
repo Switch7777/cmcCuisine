@@ -37,12 +37,13 @@
 /* ===== Carrousel ===== */
 .carousel {
   position: relative;
-  max-width: 1100px;
+  max-width: 1250px;
   margin: clamp(12px, 3vw, 20px) auto 0;
+  aspect-ratio: 4 / 3; /* Ensures height even during loading */
   overflow: hidden; /* pas de scroll horizontal */
   border-radius: 10px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-  background: #f4f4f4;
+  background: #f4f4f4; /* Background for the carousel area */
   touch-action: pan-y; /* évite conflit swipe/scroll */
 }
 
@@ -59,11 +60,17 @@
 .slide {
   position: relative;
   min-width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: #e9ecef;
-  margin: 0; /* ✅ supprime le margin par défaut des <figure> */
+  background: #f4f4f4; /* Same as carousel background to blend */
+  margin: 0;
   padding: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 /* Image : N&B → couleur au hover (cohérence site) */
@@ -124,32 +131,101 @@
   right: 10px;
 }
 
-/* Dots */
-.dots {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 10px;
+/* ===== Thumbnails ===== */
+.thumbnailsOuterContainer {
+  max-width: 1250px;
+  margin: 20px auto 0;
+  padding: 0 10px;
+}
+
+.thumbnailsContainer {
   display: flex;
-  gap: 8px;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 10px 5px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  scroll-behavior: smooth;
+  justify-content: flex-start;
+}
+
+.thumbnailsContainer::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.thumbnail {
+  flex: 0 0 100px;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  cursor: pointer;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+  background: #f4f4f4;
+}
+
+.thumbnail:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.thumbnailActive {
+  opacity: 1;
+  border-color: #1e2c35;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+}
+
+.thumbnail img {
+  transition: transform 0.3s ease;
+}
+
+.thumbnailActive img {
+  transform: scale(1.1);
+}
+
+/* ===== Loader ===== */
+.loaderContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  background: #f4f4f4; /* Light background to match carousel */
+  z-index: 10;
 }
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.55);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  transform: scale(1);
-  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-  opacity: 0.7;
+
+.logoLoader {
+  animation: pulseLogo 2s ease-in-out infinite;
+  opacity: 0.8;
+  filter: brightness(0); /* Force logo to be black */
 }
-.dotActive {
-  background: #ffffff;
-  opacity: 1;
-  transform: scale(1.2);
+
+@keyframes pulseLogo {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
 }
 
 /* ===== Responsive ===== */

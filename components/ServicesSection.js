@@ -28,19 +28,19 @@ const CARDS = {
     {
       label: "Kitchens",
       href: "/servicesCuisine",
-      img: "/services/cuisines.webp",
+      img: "/banner/cuisine.webp",
       alt: "Custom kitchen",
     },
     {
       label: "Bathrooms",
       href: "/servicesSdb",
-      img: "/services/sdb.webp",
+      img: "/banner/sdb.webp",
       alt: "Bathroom design",
     },
     {
       label: "Closets",
       href: "/servicesPlacard",
-      img: "/services/placard.webp",
+      img: "/banner/dressing.webp",
       alt: "Closet and wardrobe",
     },
   ],

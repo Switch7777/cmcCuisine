@@ -32,7 +32,7 @@ const BACKGROUNDS = [
 const SLIDE_INTERVAL_MS = 4500;
 const FADE_MS = 1400;
 
-export default function HeaderHero() {
+export default function HeaderHero({ onLoaded }) {
   const { lang } = useLang();
   const L = NAV_LABELS[lang];
   const [bgIndex, setBgIndex] = useState(0);
@@ -105,6 +105,7 @@ export default function HeaderHero() {
             layout="fill"
             className={styles.bg}
             priority={i === 0}
+            onLoadingComplete={i === 0 ? onLoaded : undefined}
           />
         </div>
       ))}
