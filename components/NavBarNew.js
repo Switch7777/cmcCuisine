@@ -33,7 +33,7 @@ const NAV_LABELS = {
     servicesBathroom: "Bathrooms",
     servicesCloset: "Closets",
     servicesRenovation: "Renovation",
-    works: "Our Kitchens",
+    works: "Our Projects",
     aboutUs: "About Us",
     cta: "Book a Consultation",
     outBtn: "CMC Habitat",

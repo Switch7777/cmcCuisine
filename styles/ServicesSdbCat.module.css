@@ -82,6 +82,31 @@
   max-width: 700px;
 }
 
+/* === BRAND SECTIONS === */
+.brandHeader {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.brandLine {
+  flex: 1;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.brandKicker {
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #1b1b1b;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+  white-space: nowrap;
+}
+
 /* === GRILLE (Flexbox pour centrage auto) === */
 .grid {
   display: flex;

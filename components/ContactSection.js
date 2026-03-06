@@ -95,7 +95,7 @@ export default function ContactSection() {
         </div>
         <div className={styles.bgWrap}>
           <Image
-            src="/banner/cuisine.jpg"
+            src="/banner/cuisine.webp"
             alt="Bannière contact CMC Cuisine"
             layout="fill"
             objectFit="cover"
