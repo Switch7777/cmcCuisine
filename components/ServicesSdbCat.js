@@ -688,7 +688,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-031-2",
-    title: "BADEA 031 Quartz",
+    title: "031 Quartz",
     img: "/sdb/031-2.jpg",
     description: {
       fr: "Quand tout est conçu jusque dans les moindres détails, tout est à sa place. Une vasque noire, un banc et des poignées assorties apportent la sérénité à cette planification.",
@@ -721,7 +721,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-252",
-    title: "BADEA 252 Urban",
+    title: "252 Urban",
     img: "/sdb/252.jpg",
     description: {
       fr: "Une élégance urbaine avec un cachet industriel. Le plan de vasque en décor pierre combiné aux façades vert foncé crée une atmosphère harmonieuse.",
@@ -752,7 +752,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-158",
-    title: "BADEA 158 Pure",
+    title: "158 Pure",
     img: "/sdb/158.jpg",
     description: {
       fr: "Un concept d'éclairage aménagé individuellement. Ce meuble au design épuré sans poignées mise sur une esthétique moderne et une fonctionnalité optimale.",
@@ -787,7 +787,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-572",
-    title: "BADEA 572 Sabbia",
+    title: "572 Sabbia",
     img: "/sdb/572.jpg",
     description: {
       fr: "Notre verre stratifié garantit la propreté de la surface derrière la vasque. Les accessoires en aspect laiton brossé sont parfaitement assortis.",
@@ -818,7 +818,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-574",
-    title: "BADEA 574 Piano",
+    title: "574 Piano",
     img: "/sdb/574.jpg",
     description: {
       fr: "Le programme Plus sublime la salle de bains avec des vasques exclusives. La finition noire du meuble apporte un contraste et une finesse incomparable.",
@@ -850,7 +850,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-251",
-    title: "BADEA 251 Visit",
+    title: "251 Visit",
     img: "/sdb/251.jpg",
     description: {
       fr: "Design à la perfection. De la vasque sur plan noire au meuble étagère ERRE8 spacieux, tout a été prévu pour la créativité dans la salle de bains moderne.",
@@ -881,7 +881,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-202",
-    title: "BADEA 202 VariPro",
+    title: "202 VariPro",
     img: "/sdb/202.jpg",
     description: {
       fr: "Un éclairage chaud et doux pour se détendre – notre miroir DEL Flat met tout en valeur. Réglez en continu l’intensité lumineuse d'un simple bouton.",
@@ -911,7 +911,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-084-1",
-    title: "BADEA 084 Wild",
+    title: "084 Wild",
     img: "/sdb/084-1.jpg",
     description: {
       fr: "Ici, tout est parfait jusque dans les moindres détails. La teinte noire sublime le style contemporain tandis que la vasque Cubus 2.0 incarne l’élégance.",
@@ -942,7 +942,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-049",
-    title: "BADEA 049 VariPro",
+    title: "049 VariPro",
     img: "/sdb/049.jpg",
     description: {
       fr: "Des solutions de rangement innovantes et des détails convaincants, tels que les charnières fiables avec amortissement intégré pour plus de confort.",
@@ -973,7 +973,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-155",
-    title: "BADEA 155 Kito",
+    title: "155 Kito",
     img: "/sdb/155.jpg",
     description: {
       fr: "Conçues pour une bonne prise en main, nos poignées disponibles en plusieurs largeurs et couleurs subliment le mobilier de votre salle de bains.",
@@ -1002,7 +1002,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-031-1",
-    title: "BADEA 031 Roma",
+    title: "031 Roma",
     img: "/sdb/031-1.jpg",
     description: {
       fr: "VariPro s'adapte à toutes les situations : notre plan de toilette en verre de 12 mm d'épaisseur s'intègre parfaitement aux formes rectilignes.",
@@ -1032,7 +1032,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-276",
-    title: "BADEA 276 Pure",
+    title: "276 Pure",
     img: "/sdb/276.jpg",
     description: {
       fr: "Notre série Pure sans poignée se distingue par ses lignes minimalistes et son élégance sobre. Un design d’une qualité exceptionnelle, prévu pour durer.",
@@ -1061,7 +1061,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-155-1",
-    title: "BADEA 155 Pure",
+    title: "155 Pure",
     img: "/sdb/155-1.jpg",
     description: {
       fr: "Accrocheur de regards avec ses poignées profilées. Un coulissant où chaque chose est à sa place pour une organisation parfaite.",
@@ -1091,7 +1091,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-281",
-    title: "BADEA 281 VariPro",
+    title: "281 VariPro",
     img: "/sdb/281.jpg",
     description: {
       fr: "Mat et structuré. Le coloris beige sable et l’imitation bois Toffee interprètent à merveille le look naturel avec des notes brillantes.",
@@ -1121,7 +1121,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-233",
-    title: "BADEA 233 Stormgrey",
+    title: "233 Stormgrey",
     img: "/sdb/233.jpg",
     description: {
       fr: "L'élégance du gris tempête alliée à la chaleur de l'orme blanchi. Cette planification harmonieuse apporte une sérénité immédiate à votre espace bain.",
@@ -1149,7 +1149,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-031",
-    title: "BADEA 031 Classic",
+    title: "031 Classic",
     img: "/sdb/031.jpg",
     description: {
       fr: "Le corps et l’esprit trouvent ici leur plein épanouissement. L’armoire à glace souligne l’incroyable sensation d’espace grâce à un éclairage DEL attrayant.",
@@ -1178,7 +1178,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-027",
-    title: "BADEA 027 Visit",
+    title: "027 Visit",
     img: "/sdb/027.jpg",
     description: {
       fr: "La façade en verre stratifié séduit par sa beauté intemporelle. L’applique DEL Capri peut être réglée en intensité et température de couleur.",
@@ -1208,7 +1208,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-070-1",
-    title: "BADEA 070 Classic",
+    title: "070 Classic",
     img: "/sdb/070-1.jpg",
     description: {
       fr: "La fonction TipOn permet d’ouvrir le coulissant qui dévoile son organisation intérieure. Les façades structurées décor bois créent une ambiance chaleureuse.",
@@ -1234,7 +1234,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-011",
-    title: "BADEA 011 VariPro",
+    title: "011 VariPro",
     img: "/sdb/011.jpg",
     description: {
       fr: "La vasque design Organic 2.0, à dimensions variables, s’intègre parfaitement dans chaque niche pour un gain de place optimal.",
@@ -1260,7 +1260,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-011-2",
-    title: "BADEA 011 Contrast",
+    title: "011 Contrast",
     img: "/sdb/011-2.jpg",
     description: {
       fr: "Le cadre métallique noir du miroir rond est repris par les poignées. Le jeu entre le corps et la façade mise sur les contrastes frappants.",
@@ -1287,7 +1287,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-011-1",
-    title: "BADEA 011 Elba",
+    title: "011 Elba",
     img: "/sdb/011-1.jpg",
     description: {
       fr: "L'applique DEL Elba peut être réglée en intensité et température de couleur grâce au système LightMotion, du blanc froid au blanc chaud.",
@@ -1314,7 +1314,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-069-1",
-    title: "BADEA 069 Concrete",
+    title: "069 Concrete",
     img: "/sdb/069-1.jpg",
     description: {
       fr: "Aspect béton moderne. La vasque, l’étagère et l’armoire murale optimisent l'espace tandis que la banquette apporte une touche pratique.",
@@ -1340,7 +1340,7 @@ const COLLECTIONS = [
   },
   {
     slug: "badea-279",
-    title: "BADEA 279 Stockholm",
+    title: "279 Stockholm",
     img: "/sdb/279.jpg",
     description: {
       fr: "Technologie brevetée anti-traces de doigts. La surface mate soyeuse de cette façade Stockholm allie esthétique irrésistible et entretien facilité.",
@@ -1574,13 +1574,13 @@ export default function ServicesSdbCat() {
           <p className={styles.subtitle}>{t.subtitle}</p>
         </div>
 
-        {/* VISO SECTION */}
+        {/* BADEA SECTION */}
         <div className={styles.brandHeader}>
-          <div className={styles.brandKicker}>VISO</div>
+          <div className={styles.brandKicker}>BADEA</div>
           <div className={styles.brandLine} />
         </div>
         <div className={styles.grid}>
-          {VISO.map((col) => (
+          {BADEA.map((col) => (
             <article 
               key={col.slug} 
               className={styles.card}
@@ -1604,13 +1604,13 @@ export default function ServicesSdbCat() {
           ))}
         </div>
 
-        {/* BADEA SECTION */}
+        {/* VISO SECTION */}
         <div className={styles.brandHeader}>
-          <div className={styles.brandKicker}>BADEA</div>
+          <div className={styles.brandKicker}>VISO</div>
           <div className={styles.brandLine} />
         </div>
         <div className={styles.grid}>
-          {BADEA.map((col) => (
+          {VISO.map((col) => (
             <article 
               key={col.slug} 
               className={styles.card}
