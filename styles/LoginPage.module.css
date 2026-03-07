@@ -198,6 +198,24 @@
   border: 1px solid rgba(255, 77, 77, 0.2);
 }
 
+.forgotLink {
+  font-family: "Jost", sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  align-self: flex-end;
+  margin-top: 4px;
+  transition: color 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.forgotLink:hover {
+  color: #fff;
+}
+
 /* RESPONSIVE */
 @media (max-width: 480px) {
   .card {

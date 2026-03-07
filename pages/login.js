@@ -18,6 +18,7 @@ const LABELS = {
     show: "Afficher",
     hide: "Masquer",
     error: "Identifiants incorrects.",
+    forgotPassword: "Mot de passe oublié ?",
   },
   en: {
     title: "Login",
@@ -30,6 +31,7 @@ const LABELS = {
     show: "Show",
     hide: "Hide",
     error: "Invalid credentials.",
+    forgotPassword: "Forgot password?",
   },
 };
 
@@ -166,6 +168,13 @@ export default function LoginPage() {
                     {showPwd ? L.hide : L.show}
                   </button>
                 </div>
+                <button
+                  type="button"
+                  className={styles.forgotLink}
+                  onClick={() => router.push("/admin/forgot-password")}
+                >
+                  {L.forgotPassword}
+                </button>
               </div>
 
               {error ? <p className={styles.error}>{error}</p> : null}
